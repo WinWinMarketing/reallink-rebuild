@@ -112,6 +112,8 @@
 
     /* ---- SECTIONS ---- */
     section { padding: 96px 48px; max-width: 1200px; margin: 0 auto; }
+    /* Hero is full-bleed — escape the section max-width constraint */
+    #hero-section { max-width: 100%; width: 100%; padding: 0; margin: 0; }
     .section-full { padding: 96px 48px; }
     .section-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
     h2.section-h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 16px; line-height: 1.1; }
@@ -474,16 +476,7 @@
       var canvas = document.getElementById('webgl-canvas');
       var fallback = document.getElementById('hero-fallback');
 
-      // Feature detect WebGL
-      var gl = null;
-      try { gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl'); } catch(e) {}
-      if (!gl) {
-        // No WebGL — show fallback gradient
-        canvas.style.display = 'none';
-        fallback.style.display = 'block';
-        return;
-      }
-
+      // Check THREE is available
       if (typeof THREE === 'undefined') {
         canvas.style.display = 'none';
         fallback.style.display = 'block';
@@ -497,7 +490,19 @@
       camera.position.set(0, 4, 18);
       camera.lookAt(0, 2, 0);
 
-      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+      // Let THREE create the WebGL context directly on the canvas.
+      // Do NOT pre-create a context via canvas.getContext('webgl') — that would
+      // conflict with THREE's own context and produce the
+      // "existing context of a different type" error.
+      var renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+      } catch(e) {
+        // WebGL unavailable — show fallback gradient
+        canvas.style.display = 'none';
+        fallback.style.display = 'block';
+        return;
+      }
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.shadowMap.enabled = true;
