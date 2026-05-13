@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shan Thayaparan — Realtor & Mortgage Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Source Serif 4', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F8F5F0',
+            ink: '#1A1A1A',
+            muted: '#6B6B6B',
+            rule: '#D4CFC8',
+            accent: '#8B0000',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F8F5F0; color: #1A1A1A; }
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      float: left;
+      line-height: 0.75;
+      margin-right: 0.12em;
+      margin-top: 0.08em;
+      color: #8B0000;
+    }
+    .section-rule { border-top: 1px solid #D4CFC8; }
+    .thick-rule { border-top: 3px solid #1A1A1A; }
+    .thin-rule { border-top: 1px solid #1A1A1A; margin-bottom: 2px; }
+    nav a { letter-spacing: 0.08em; }
+    .listing-img { aspect-ratio: 4/3; object-fit: cover; }
+    .calc-input { background: transparent; border: none; border-bottom: 1px solid #1A1A1A; outline: none; width: 100%; padding: 4px 0; font-family: 'DM Sans', sans-serif; }
+    .calc-input:focus { border-bottom-color: #8B0000; }
+    .badge { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border: 1px solid currentColor; }
+  </style>
+</head>
+<body class="font-body">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-cream border-b border-rule">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl font-bold tracking-tight text-ink">
+        Shan Thayaparan
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-sans uppercase tracking-widest text-muted">
+        <a href="#listings" class="hover:text-ink transition-colors">Listings</a>
+        <a href="#mortgage" class="hover:text-ink transition-colors">Mortgage</a>
+        <a href="#about" class="hover:text-ink transition-colors">About</a>
+        <a href="#resources" class="hover:text-ink transition-colors">Resources</a>
+        <a href="#contact" class="hover:text-ink transition-colors">Contact</a>
+      </nav>
+      <a href="#contact" class="hidden md:inline-block border border-ink px-5 py-2 text-xs font-sans uppercase tracking-widest hover:bg-ink hover:text-cream transition-colors">
+        Get Pre-Approved
+      </a>
+      <button class="md:hidden font-sans text-sm">Menu</button>
+    </div>
+  </header>
+
+  <!-- EDITORIAL DATELINE -->
+  <div class="max-w-6xl mx-auto px-6 pt-8">
+    <div class="thick-rule mb-1"></div>
+    <div class="thin-rule"></div>
+    <div class="flex justify-between items-center py-2">
+      <span class="font-sans text-xs uppercase tracking-widest text-muted">Toronto · Greater Toronto Area · Est. 20+ Years</span>
+      <span class="font-sans text-xs uppercase tracking-widest text-muted">RE/MAX Community Realty</span>
+    </div>
+    <div class="thick-rule"></div>
+  </div>
+
+  <!-- HERO: DUAL CTA SPLIT -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-12 gap-0">
+      <!-- Left editorial column -->
+      <div class="md:col-span-7 md:pr-16 md:border-r border-rule">
+        <p class="font-sans text-xs uppercase tracking-widest text-muted mb-4">Dual-licensed · Realtor &amp; Mortgage Agent</p>
+        <h1 class="font-serif text-5xl md:text-7xl font-bold leading-none mb-6">
+          Finding<br/>
+          <em class="italic font-normal">your home</em><br/>
+          starts here.
+        </h1>
+        <p class="font-body text-lg text-muted leading-relaxed mb-10 max-w-lg drop-cap">
+          As a seasoned real estate expert for over two decades, I've helped countless individuals seize life-changing investment opportunities. My diverse background in technology, community engagement, politics, retail, and entrepreneurship has uniquely prepared me to serve clients with exceptional care and expertise.
+        </p>
+        <!-- Dual CTA -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <a href="/listings" class="group block border border-ink p-6 hover:bg-ink hover:text-cream transition-all">
+            <div class="font-sans text-xs uppercase tracking-widest text-muted group-hover:text-cream mb-3">For Buyers</div>
+            <div class="font-serif text-2xl font-bold mb-2">I'm looking<br/>for a home</div>
+            <div class="font-sans text-xs uppercase tracking-widest mt-4">Browse Listings →</div>
+          </a>
+          <a href="/mortgage" class="group block border border-rule bg-ink text-cream p-6 hover:bg-accent transition-all">
+            <div class="font-sans text-xs uppercase tracking-widest text-cream/60 mb-3">For Borrowers</div>
+            <div class="font-serif text-2xl font-bold mb-2">I need a<br/>mortgage</div>
+            <div class="font-sans text-xs uppercase tracking-widest mt-4">Explore Rates →</div>
+          </a>
+        </div>
+      </div>
+      <!-- Right photo column -->
+      <div class="md:col-span-5 md:pl-16 flex flex-col justify-between">
+        <div>
+          <img src="../assets/shan.jpg" alt="Shan Thayaparan — Realtor & Mortgage Agent" class="w-full max-w-xs mx-auto md:mx-0 grayscale" />
+          <p class="font-sans text-xs text-muted mt-3 text-center md:text-left uppercase tracking-wide">Shan Thayaparan<br/>Realtor & Level-2 Mortgage Agent · GTA</p>
+        </div>
+        <!-- Trust strip vertical -->
+        <div class="mt-8 section-rule pt-6 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="badge border-muted text-muted">RE/MAX</span>
+            <span class="font-sans text-xs text-muted">Community Realty Brokerage</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="badge border-muted text-muted">FSRA</span>
+            <span class="font-sans text-xs text-muted">Level-2 Mortgage Agent</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="badge border-muted text-muted">RECO</span>
+            <span class="font-sans text-xs text-muted">Registered Real Estate Agent</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="badge border-muted text-muted">20+</span>
+            <span class="font-sans text-xs text-muted">Years Experience · Diamond Award</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="badge border-muted text-muted">80%</span>
+            <span class="font-sans text-xs text-muted">Business from Referrals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="thick-rule mb-1"></div>
+    <div class="thin-rule"></div>
+  </div>
+
+  <!-- FEATURED LISTINGS -->
+  <section id="listings" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="flex justify-between items-baseline mb-8">
+      <h2 class="font-serif text-4xl font-bold">Featured Listings</h2>
+      <a href="/listings" class="font-sans text-xs uppercase tracking-widest text-muted hover:text-ink">View All →</a>
+    </div>
+    <p class="font-sans text-xs text-muted uppercase tracking-widest mb-8">Sample listings — live IDX coming from PropTx</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <article class="group">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="145 Birchwood Cres, Pickering" class="listing-img w-full group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="section-rule pt-4">
+          <div class="flex justify-between items-start mb-2">
+            <div class="font-serif text-2xl font-bold">$1,189,000</div>
+            <span class="badge border-muted text-muted">For Sale</span>
+          </div>
+          <div class="font-sans text-sm font-medium mb-1">145 Birchwood Cres</div>
+          <div class="font-sans text-xs text-muted mb-3">Pickering, ON · MLS# E1234567</div>
+          <div class="flex gap-4 font-sans text-xs text-muted mb-3">
+            <span>4 Beds</span><span>3 Baths</span><span>2,150 sqft</span>
+          </div>
+          <div class="font-sans text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="group">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="88 Lakeview Dr, Ajax" class="listing-img w-full group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="section-rule pt-4">
+          <div class="flex justify-between items-start mb-2">
+            <div class="font-serif text-2xl font-bold">$879,000</div>
+            <span class="badge border-muted text-muted">For Sale</span>
+          </div>
+          <div class="font-sans text-sm font-medium mb-1">88 Lakeview Dr</div>
+          <div class="font-sans text-xs text-muted mb-3">Ajax, ON · MLS# E2345678</div>
+          <div class="flex gap-4 font-sans text-xs text-muted mb-3">
+            <span>3 Beds</span><span>2 Baths</span><span>1,640 sqft</span>
+          </div>
+          <div class="font-sans text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="group">
+        <div class="overflow-hidden mb-4">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="31 Scarlett Rd, Scarborough" class="listing-img w-full group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="section-rule pt-4">
+          <div class="flex justify-between items-start mb-2">
+            <div class="font-serif text-2xl font-bold">$699,900</div>
+            <span class="badge border-muted text-muted">For Sale</span>
+          </div>
+          <div class="font-sans text-sm font-medium mb-1">31 Scarlett Rd, Unit 412</div>
+          <div class="font-sans text-xs text-muted mb-3">Scarborough, ON · MLS# E3456789</div>
+          <div class="flex gap-4 font-sans text-xs text-muted mb-3">
+            <span>2 Beds</span><span>2 Baths</span><span>920 sqft</span>
+          </div>
+          <div class="font-sans text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="thick-rule mb-1"></div>
+    <div class="thin-rule"></div>
+  </div>
+
+  <!-- MORTGAGE CALCULATOR -->
+  <section id="mortgage" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <p class="font-sans text-xs uppercase tracking-widest text-muted mb-3">Tools</p>
+        <h2 class="font-serif text-4xl font-bold mb-6">Mortgage<br/><em class="italic font-normal">Payment</em><br/>Calculator</h2>
+        <p class="font-body text-muted leading-relaxed mb-6">Estimates only — not a commitment to lend. Contact Shan for personalized advice based on your actual financial situation.</p>
+        <div class="font-sans text-xs text-muted">
+          + 4 more tools coming: Stress Test · Affordability · Land Transfer Tax · CMHC Premium
+        </div>
+      </div>
+      <div>
+        <div class="space-y-8 mb-8">
+          <div>
+            <label class="font-sans text-xs uppercase tracking-widest text-muted block mb-2">Purchase Price</label>
+            <div class="flex items-baseline gap-2">
+              <span class="font-serif text-xl font-bold">$</span>
+              <input type="number" id="principal" value="850000" min="50000" max="5000000" step="5000" class="calc-input font-serif text-2xl font-bold" />
+            </div>
+          </div>
+          <div>
+            <label class="font-sans text-xs uppercase tracking-widest text-muted block mb-2">Annual Interest Rate (%)</label>
+            <input type="number" id="rate" value="5.25" min="0.1" max="20" step="0.05" class="calc-input font-serif text-2xl font-bold" />
+          </div>
+          <div>
+            <label class="font-sans text-xs uppercase tracking-widest text-muted block mb-2">Amortization (Years)</label>
+            <input type="number" id="amort" value="25" min="5" max="30" step="1" class="calc-input font-serif text-2xl font-bold" />
+          </div>
+        </div>
+        <div class="section-rule pt-6">
+          <div class="font-sans text-xs uppercase tracking-widest text-muted mb-2">Estimated Monthly Payment</div>
+          <div class="font-serif text-5xl font-bold text-ink" id="result">$4,686</div>
+          <div class="font-sans text-xs text-muted mt-2">Principal &amp; Interest only. Property tax, insurance &amp; CMHC not included.</div>
+        </div>
+        <a href="#contact" class="inline-block mt-6 border border-ink px-6 py-3 font-sans text-xs uppercase tracking-widest hover:bg-ink hover:text-cream transition-colors">Book a call with Shan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="thick-rule mb-1"></div>
+    <div class="thin-rule"></div>
+  </div>
+
+  <!-- WHY SHAN -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+    <p class="font-sans text-xs uppercase tracking-widest text-muted mb-6">Why Work With Shan</p>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <div class="font-serif text-6xl font-bold text-rule mb-4">01</div>
+        <h3 class="font-serif text-2xl font-bold mb-4">Dual-Licensed<br/>Advantage</h3>
+        <p class="font-body text-muted leading-relaxed">Few professionals hold both a real estate broker licence and an FSRA Level-2 mortgage agent designation. Shan does. That means one trusted advisor guides you from listing to closing to financing — no gap, no conflict.</p>
+      </div>
+      <div>
+        <div class="font-serif text-6xl font-bold text-rule mb-4">02</div>
+        <h3 class="font-serif text-2xl font-bold mb-4">GTA Local<br/>Expert</h3>
+        <p class="font-body text-muted leading-relaxed">Scarborough, Pickering, Ajax, Oshawa, Toronto — Shan has worked these markets for over 20 years. Diamond Award recipient. Eighty percent of his business comes from referrals. That's not marketing; that's a track record.</p>
+      </div>
+      <div>
+        <div class="font-serif text-6xl font-bold text-rule mb-4">03</div>
+        <h3 class="font-serif text-2xl font-bold mb-4">Team Shan<br/>Support</h3>
+        <p class="font-body text-muted leading-relaxed">When you work with Shan, you work with the whole team. Jeyakumar Nadarasah, Anita Quaye, Thanu Thayaparan, and Viki Velauthan — five dedicated sales representatives with one shared standard of service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="thick-rule mb-1"></div>
+    <div class="thin-rule"></div>
+  </div>
+
+  <!-- RESOURCES -->
+  <section id="resources" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="flex justify-between items-baseline mb-8">
+      <h2 class="font-serif text-4xl font-bold">Resources</h2>
+      <a href="/resources" class="font-sans text-xs uppercase tracking-widest text-muted hover:text-ink">All Articles →</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="section-rule pt-6">
+        <span class="font-sans text-xs uppercase tracking-widest text-muted">Mortgage Tips</span>
+        <h3 class="font-serif text-xl font-bold mt-3 mb-3">The B-20 Stress Test Explained: What Every GTA Buyer Needs to Know</h3>
+        <p class="font-body text-sm text-muted leading-relaxed">OSFI's qualifying rate rule affects how much you can borrow. Here's how it works and how to plan around it.</p>
+        <a href="#" class="font-sans text-xs uppercase tracking-widest mt-4 inline-block hover:text-muted">Read →</a>
+      </article>
+      <article class="section-rule pt-6">
+        <span class="font-sans text-xs uppercase tracking-widest text-muted">Market Update</span>
+        <h3 class="font-serif text-xl font-bold mt-3 mb-3">Scarborough & Pickering Housing Market: Spring 2026 Snapshot</h3>
+        <p class="font-body text-sm text-muted leading-relaxed">Active listings, days on market, and price trends for the communities Shan serves. Updated monthly.</p>
+        <a href="#" class="font-sans text-xs uppercase tracking-widest mt-4 inline-block hover:text-muted">Read →</a>
+      </article>
+      <article class="section-rule pt-6">
+        <span class="font-sans text-xs uppercase tracking-widest text-muted">Buyer Guide</span>
+        <h3 class="font-serif text-xl font-bold mt-3 mb-3">First-Time Buyer's Checklist: From Pre-Approval to Keys in Hand</h3>
+        <p class="font-body text-sm text-muted leading-relaxed">A plain-language guide to the Ontario homebuying process, written for first-timers navigating a competitive market.</p>
+        <a href="#" class="font-sans text-xs uppercase tracking-widest mt-4 inline-block hover:text-muted">Read →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="contact" class="bg-ink text-cream py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="font-sans text-xs uppercase tracking-widest text-cream/50 mb-4">Ready to make a move?</p>
+      <h2 class="font-serif text-5xl font-bold mb-10">Let's talk.</h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:4168264742" class="border border-cream px-8 py-4 font-sans text-xs uppercase tracking-widest hover:bg-cream hover:text-ink transition-colors">
+          Book a 15-Minute Call
+        </a>
+        <a href="#mortgage" class="bg-accent border border-accent px-8 py-4 font-sans text-xs uppercase tracking-widest hover:bg-cream hover:text-ink hover:border-cream transition-colors">
+          Get a Quick Rate Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE FOOTER -->
+  <footer class="bg-cream border-t border-rule">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="thick-rule mb-6"></div>
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="font-serif text-lg font-bold mb-4">Shan Thayaparan</div>
+          <p class="font-sans text-xs text-muted leading-relaxed">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
+        </div>
+        <div>
+          <div class="font-sans text-xs uppercase tracking-widest text-muted mb-4">Legal Disclosures</div>
+          <div class="font-sans text-xs text-muted space-y-1 leading-relaxed">
+            <div>RE/MAX Community Realty · RECO #47117293</div>
+            <div>Mortgage Agent: Mo8009140</div>
+            <div>Brokerage Lic #15422265 · License #2154151</div>
+            <div>203-1265 Morningside Ave, Toronto, ON M1B 3V9</div>
+          </div>
+        </div>
+        <div>
+          <div class="font-sans text-xs uppercase tracking-widest text-muted mb-4">Quick Links</div>
+          <div class="font-sans text-xs text-muted space-y-2">
+            <div><a href="#" class="hover:text-ink">Privacy Policy</a></div>
+            <div><a href="#" class="hover:text-ink">Terms of Use</a></div>
+            <div><a href="#" class="hover:text-ink">Accessibility</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="section-rule pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="font-sans text-xs text-muted">© 2026 Shan Thayaparan. All rights reserved.</div>
+        <div class="font-sans text-xs text-muted">Website by <a href="https://winwinmarketing.ca" class="hover:text-ink">WinWin Marketing</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calcPayment() {
+      const P = parseFloat(document.getElementById('principal').value) || 850000;
+      const annualRate = parseFloat(document.getElementById('rate').value) || 5.25;
+      const years = parseInt(document.getElementById('amort').value) || 25;
+      const r = annualRate / 100 / 12;
+      const n = years * 12;
+      if (r === 0) {
+        document.getElementById('result').textContent = '$' + Math.round(P / n).toLocaleString();
+        return;
+      }
+      const payment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      document.getElementById('result').textContent = '$' + Math.round(payment).toLocaleString();
+    }
+    document.getElementById('principal').addEventListener('input', calcPayment);
+    document.getElementById('rate').addEventListener('input', calcPayment);
+    document.getElementById('amort').addEventListener('input', calcPayment);
+    calcPayment();
+  </script>
+</body>
+</html>
