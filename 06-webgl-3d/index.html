@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shan Thayaparan — Realtor &amp; Mortgage Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1E50D6;
+      --blue-dark: #0A1F4F;
+      --maroon: #7C0000;
+      --cream: #F4F0E8;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #F7F8FF; color: var(--text); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; }
+
+    /* ---- NAV ---- */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,31,79,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(124,0,0,0.25);
+      padding: 18px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #nav .logo { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    #nav .logo span { color: #7C0000; }
+    #nav nav a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; margin-left: 28px; transition: color 0.2s; }
+    #nav nav a:hover { color: #fff; }
+    #nav .cta-btn { background: var(--maroon); color: #fff; border: none; padding: 10px 22px; font-family: 'Outfit',sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
+    #nav .cta-btn:hover { background: #5C0000; }
+
+    /* ---- HERO ---- */
+    #hero-section {
+      position: relative; width: 100%; height: 100vh; min-height: 600px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    #webgl-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+    }
+    /* Fallback gradient shown when WebGL not available */
+    #hero-fallback {
+      display: none;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0A1F4F 0%, #1E50D6 50%, #0A1F4F 100%);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(10,31,79,0.82) 0%, rgba(10,31,79,0.45) 60%, transparent 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 700px;
+      padding: 0 48px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px; padding: 8px 16px;
+      font-size: 0.75rem; color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+    }
+    .pulse { width: 8px; height: 8px; background: #10B981; border-radius: 50%; animation: pulse-anim 2s infinite; }
+    @keyframes pulse-anim { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.6;transform:scale(1.3);} }
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800;
+      color: #fff; line-height: 1.05; margin-bottom: 24px;
+    }
+    .hero-content h1 .accent { color: #7C0000; }
+    .hero-content p {
+      font-size: 1.1rem; color: rgba(255,255,255,0.72);
+      line-height: 1.7; max-width: 520px; margin-bottom: 40px;
+    }
+    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--maroon); color: #fff; padding: 16px 32px;
+      font-family: 'Outfit',sans-serif; font-weight: 700; font-size: 1rem;
+      border: none; cursor: pointer; text-decoration: none;
+      display: inline-block; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #5C0000; transform: translateY(-2px); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.1); color: #fff; padding: 16px 32px;
+      font-family: 'Outfit',sans-serif; font-weight: 600; font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-decoration: none;
+      display: inline-block; backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .hero-photo {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-photo img { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
+    .hero-photo-info { font-size: 0.8rem; color: rgba(255,255,255,0.65); }
+    .hero-photo-info strong { color: #fff; display: block; font-size: 0.95rem; }
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .scroll-hint span { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .scroll-hint-line { width: 1px; height: 40px; background: linear-gradient(to bottom, #7C0000, transparent); }
+
+    /* ---- SECTIONS ---- */
+    section { padding: 96px 48px; max-width: 1200px; margin: 0 auto; }
+    .section-full { padding: 96px 48px; }
+    .section-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+    h2.section-h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 16px; line-height: 1.1; }
+    .section-muted { color: var(--muted); line-height: 1.7; max-width: 600px; }
+
+    /* Trust strip */
+    .trust-strip { background: #fff; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 20px 48px; }
+    .trust-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; align-items: center; font-size: 0.8rem; color: var(--muted); }
+    .trust-item-star { color: #F59E0B; margin-right: 4px; }
+
+    /* Listings */
+    .listing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 32px; }
+    .listing-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+    .listing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,80,214,0.12); }
+    .listing-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .listing-card-body { padding: 20px; }
+    .listing-price { font-family: 'Outfit',sans-serif; font-size: 1.5rem; font-weight: 700; }
+    .listing-addr { font-weight: 600; margin: 4px 0 2px; }
+    .listing-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 12px; }
+    .listing-stats { display: flex; gap: 16px; font-size: 0.8rem; color: var(--muted); border-top: 1px solid #f3f4f6; padding-top: 12px; margin-bottom: 8px; }
+    .listing-courtesy { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+    .listing-badge { display: inline-block; background: var(--blue); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+    .listing-badge.new { background: var(--maroon); }
+
+    /* Calculator */
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .calc-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 32px; }
+    .calc-slider-row { margin-bottom: 24px; }
+    .calc-slider-row label { font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .calc-slider-row label span { color: var(--blue); font-weight: 700; }
+    .calc-slider-row input[type="range"] { width: 100%; accent-color: var(--blue); height: 6px; }
+    .calc-result-box { background: var(--blue-dark); color: #fff; border-radius: 12px; padding: 28px; text-align: center; margin-bottom: 16px; }
+    .calc-result-label { font-size: 0.8rem; opacity: 0.65; margin-bottom: 4px; }
+    .calc-result-amount { font-family: 'Outfit',sans-serif; font-size: 3rem; font-weight: 800; }
+    .calc-result-note { font-size: 0.75rem; opacity: 0.55; margin-top: 4px; }
+    .calc-cta { display: block; text-align: center; background: var(--maroon); color: #fff; padding: 14px; font-family: 'Outfit',sans-serif; font-weight: 700; text-decoration: none; border-radius: 8px; transition: background 0.2s; }
+    .calc-cta:hover { background: #5C0000; }
+
+    /* Why Shan */
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+    .pillar-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 32px; transition: transform 0.25s, box-shadow 0.25s; }
+    .pillar-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(30,80,214,0.1); }
+    .pillar-card.featured { background: var(--blue-dark); color: #fff; }
+    .pillar-card.featured .pillar-body { color: rgba(255,255,255,0.72); }
+    .pillar-num { font-family: 'Outfit',sans-serif; font-size: 3rem; font-weight: 800; color: var(--blue); opacity: 0.25; margin-bottom: 8px; }
+    .pillar-card.featured .pillar-num { color: var(--maroon); opacity: 0.7; }
+    .pillar-title { font-family: 'Outfit',sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+    .pillar-body { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+
+    /* Resources */
+    .resources-bg { background: #F0F4FF; }
+    .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+    .resource-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; transition: transform 0.25s; }
+    .resource-card:hover { transform: translateY(-3px); }
+    .resource-card-top { height: 4px; background: linear-gradient(90deg, var(--blue), var(--maroon)); }
+    .resource-card-body { padding: 24px; }
+    .resource-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); background: #EBF0FD; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px; }
+    .resource-title { font-family: 'Outfit',sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .resource-body { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+    .resource-link { font-size: 0.8rem; font-weight: 700; color: var(--blue); text-decoration: none; }
+    .resource-link:hover { text-decoration: underline; }
+
+    /* CTA band */
+    .cta-band { background: linear-gradient(135deg, #0A1F4F 0%, #7C0000 100%); padding: 96px 48px; text-align: center; color: #fff; }
+    .cta-band h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-band p { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+    .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: var(--blue); padding: 16px 36px; font-family: 'Outfit',sans-serif; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.15s; }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-outline-white { background: rgba(255,255,255,0.1); color: #fff; padding: 16px 36px; font-family: 'Outfit',sans-serif; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.2); }
+
+    /* Footer */
+    footer { background: #0A1F4F; color: rgba(255,255,255,0.5); padding: 48px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto 32px; }
+    .footer-title { font-family: 'Outfit',sans-serif; font-weight: 700; color: rgba(255,255,255,0.9); font-size: 1rem; margin-bottom: 12px; }
+    .footer-disc { font-size: 0.75rem; line-height: 1.9; }
+    .footer-links a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+
+    /* GSAP animation targets */
+    .fade-up { opacity: 0; transform: translateY(30px); }
+
+    @media (max-width: 768px) {
+      section { padding: 64px 24px; }
+      .section-full { padding: 64px 24px; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .hero-content { padding: 0 24px; }
+      #nav { padding: 16px 24px; }
+      #nav nav { display: none; }
+      .cta-band { padding: 64px 24px; }
+      footer { padding: 48px 24px; }
+      .trust-strip { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav">
+    <div class="logo">SHAN <span>THAYAPARAN</span></div>
+    <nav>
+      <a href="#listings">Listings</a>
+      <a href="#mortgage">Mortgage</a>
+      <a href="#about">About</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="cta-btn">Get Pre-Approved</a>
+  </header>
+
+  <!-- HERO with WebGL canvas -->
+  <section id="hero-section">
+    <canvas id="webgl-canvas"></canvas>
+    <!-- Fallback for no WebGL -->
+    <div id="hero-fallback"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="pulse"></div>
+        Dual-Licensed · Realtor &amp; Mortgage Agent · GTA
+      </div>
+      <h1>
+        GTA Real Estate.<br/>
+        <span class="accent">Redefined.</span>
+      </h1>
+      <p>
+        As a seasoned real estate expert for over two decades, Shan Thayaparan holds both a RE/MAX broker licence and an FSRA Level-2 mortgage agent designation — one trusted advisor from listing to closing to financing.
+      </p>
+      <div class="hero-cta-row">
+        <a href="/listings" class="btn-primary">I'm Looking for a Home</a>
+        <a href="/mortgage" class="btn-ghost">I Need a Mortgage</a>
+      </div>
+      <div class="hero-photo">
+        <img src="../assets/shan.jpg" alt="Shan Thayaparan" />
+        <div class="hero-photo-info">
+          <strong>Shan Thayaparan</strong>
+          RE/MAX Community Realty · FSRA Level-2 · Diamond Award
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-hint-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <span><span class="trust-item-star">★★★★★</span> Diamond Award</span>
+      <span>RE/MAX Community Realty</span>
+      <span>FSRA Level-2 Mortgage Agent</span>
+      <span>RECO Registered</span>
+      <span>20+ Years GTA Experience</span>
+      <span>80% Referral Business</span>
+    </div>
+  </div>
+
+  <!-- FEATURED LISTINGS -->
+  <section id="listings" class="fade-up">
+    <div class="section-label">Featured Properties</div>
+    <h2 class="section-h2">Listings in<br/>the GTA</h2>
+    <p class="section-muted" style="margin-bottom:8px;">Sample listings — live IDX coming from PropTx</p>
+    <div class="listing-grid">
+      <div class="listing-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="145 Birchwood Cres, Pickering" />
+        <div class="listing-card-body">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">$1,189,000</div>
+          <div class="listing-addr">145 Birchwood Cres</div>
+          <div class="listing-sub">Pickering, ON · MLS# E1234567</div>
+          <div class="listing-stats"><span>4 Beds</span><span>3 Baths</span><span>2,150 sqft</span></div>
+          <div class="listing-courtesy">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="88 Lakeview Dr, Ajax" />
+        <div class="listing-card-body">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">$879,000</div>
+          <div class="listing-addr">88 Lakeview Dr</div>
+          <div class="listing-sub">Ajax, ON · MLS# E2345678</div>
+          <div class="listing-stats"><span>3 Beds</span><span>2 Baths</span><span>1,640 sqft</span></div>
+          <div class="listing-courtesy">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="31 Scarlett Rd, Scarborough" />
+        <div class="listing-card-body">
+          <div class="listing-badge new">New Listing</div>
+          <div class="listing-price">$699,900</div>
+          <div class="listing-addr">31 Scarlett Rd, Unit 412</div>
+          <div class="listing-sub">Scarborough, ON · MLS# E3456789</div>
+          <div class="listing-stats"><span>2 Beds</span><span>2 Baths</span><span>920 sqft</span></div>
+          <div class="listing-courtesy">Listing courtesy of RE/MAX Community Realty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORTGAGE CALCULATOR -->
+  <section id="mortgage" class="fade-up">
+    <div class="calc-grid">
+      <div>
+        <div class="section-label">Mortgage Tools</div>
+        <h2 class="section-h2">Calculate your<br/>monthly payment</h2>
+        <p class="section-muted" style="margin-bottom:24px;">Adjust the sliders to estimate your mortgage payment. Estimates only — not a commitment to lend. Book a call for personalized advice.</p>
+        <div style="background:#EBF0FD;border-radius:12px;padding:20px;font-size:0.85rem;color:#0D3DA5;">
+          <strong style="display:block;margin-bottom:8px;">+ 4 more tools coming soon</strong>
+          <div>Stress Test (B-20) · Affordability Calculator · Ontario Land Transfer Tax · CMHC Premium</div>
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-slider-row">
+          <label>Purchase Price <span id="principalDisplay">$850,000</span></label>
+          <input type="range" id="principalSlider" min="100000" max="3000000" step="5000" value="850000" />
+          <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-top:4px;"><span>$100K</span><span>$3M</span></div>
+        </div>
+        <div class="calc-slider-row">
+          <label>Interest Rate <span id="rateDisplay">5.25%</span></label>
+          <input type="range" id="rateSlider" min="1" max="15" step="0.05" value="5.25" />
+        </div>
+        <div class="calc-slider-row">
+          <label>Amortization <span id="amortDisplay">25 years</span></label>
+          <input type="range" id="amortSlider" min="5" max="30" step="1" value="25" />
+          <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-top:4px;"><span>5 yr</span><span>30 yr</span></div>
+        </div>
+        <div class="calc-result-box">
+          <div class="calc-result-label">Estimated Monthly Payment</div>
+          <div class="calc-result-amount" id="calcResult">$4,686</div>
+          <div class="calc-result-note">P&amp;I only · Tax, insurance &amp; CMHC not included</div>
+        </div>
+        <a href="#contact" class="calc-cta">Book a call with Shan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SHAN -->
+  <section id="about" class="fade-up">
+    <div class="section-label">Why Work With Shan</div>
+    <h2 class="section-h2">The dual-licensed<br/>advantage</h2>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Dual-Licensed Advantage</div>
+        <p class="pillar-body">Few professionals hold both a real estate broker licence and an FSRA Level-2 mortgage agent designation. Shan does — one trusted advisor from listing to financing, no gap, no conflict.</p>
+      </div>
+      <div class="pillar-card featured">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">GTA Local Expert</div>
+        <p class="pillar-body">Scarborough, Pickering, Ajax, Oshawa, Toronto — Shan has worked these markets for over 20 years. Diamond Award recipient. 80% referral business. That's a track record.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Team Shan Support</div>
+        <p class="pillar-body">Jeyakumar Nadarasah, Anita Quaye, Thanu Thayaparan, and Viki Velauthan — five dedicated sales representatives with one shared standard of service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <div class="section-full resources-bg">
+    <section id="resources" class="fade-up" style="padding-top:64px;padding-bottom:64px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0;">
+        <div>
+          <div class="section-label">Resources</div>
+          <h2 class="section-h2" style="margin-bottom:0;">Latest insights</h2>
+        </div>
+        <a href="/resources" style="font-size:0.85rem;font-weight:700;color:var(--blue);text-decoration:none;">All articles →</a>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-card-top"></div>
+          <div class="resource-card-body">
+            <span class="resource-tag">Mortgage Tips</span>
+            <div class="resource-title">The B-20 Stress Test Explained: What Every GTA Buyer Needs to Know</div>
+            <p class="resource-body">OSFI's qualifying rate rule affects how much you can borrow. Here's how it works and how to plan around it.</p>
+            <a href="#" class="resource-link">Read article →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-top"></div>
+          <div class="resource-card-body">
+            <span class="resource-tag">Market Update</span>
+            <div class="resource-title">Scarborough &amp; Pickering Housing Market: Spring 2026 Snapshot</div>
+            <p class="resource-body">Active listings, days on market, and price trends for the communities Shan serves. Updated monthly.</p>
+            <a href="#" class="resource-link">Read article →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-top"></div>
+          <div class="resource-card-body">
+            <span class="resource-tag">Buyer Guide</span>
+            <div class="resource-title">First-Time Buyer's Checklist: From Pre-Approval to Keys in Hand</div>
+            <p class="resource-body">A plain-language guide to the Ontario homebuying process, written for first-timers navigating a competitive market.</p>
+            <a href="#" class="resource-link">Read article →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA BAND -->
+  <div id="contact" class="cta-band">
+    <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.55;margin-bottom:16px;">Ready to make a move?</p>
+    <h2>Let's talk.</h2>
+    <p>Book a free 15-minute consultation or get a quick rate quote — no commitment required.</p>
+    <div class="cta-row">
+      <a href="tel:4168264742" class="btn-white">Book a 15-Minute Call</a>
+      <a href="#mortgage" class="btn-outline-white">Get a Quick Rate Quote</a>
+    </div>
+  </div>
+
+  <!-- COMPLIANCE FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">Shan Thayaparan</div>
+        <p style="font-size:0.8rem;line-height:1.7;">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
+      </div>
+      <div>
+        <div class="footer-title">Legal Disclosures</div>
+        <div class="footer-disc">
+          RE/MAX Community Realty · RECO #47117293<br/>
+          Mortgage Agent: Mo8009140<br/>
+          Brokerage Lic #15422265 · License #2154151<br/>
+          203-1265 Morningside Ave, Toronto, ON M1B 3V9
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Legal</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Shan Thayaparan. All rights reserved.</span>
+      <span>Website by <a href="https://winwinmarketing.ca">WinWin Marketing</a></span>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+  <script>
+    // ---- WEBGL TORONTO SKYLINE ----
+    (function() {
+      var canvas = document.getElementById('webgl-canvas');
+      var fallback = document.getElementById('hero-fallback');
+
+      // Feature detect WebGL
+      var gl = null;
+      try { gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl'); } catch(e) {}
+      if (!gl) {
+        // No WebGL — show fallback gradient
+        canvas.style.display = 'none';
+        fallback.style.display = 'block';
+        return;
+      }
+
+      if (typeof THREE === 'undefined') {
+        canvas.style.display = 'none';
+        fallback.style.display = 'block';
+        return;
+      }
+
+      var scene = new THREE.Scene();
+      var w = canvas.clientWidth || window.innerWidth;
+      var h = canvas.clientHeight || window.innerHeight;
+      var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+      camera.position.set(0, 4, 18);
+      camera.lookAt(0, 2, 0);
+
+      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.shadowMap.enabled = true;
+
+      // Sky gradient background
+      scene.background = new THREE.Color(0x0A1F4F);
+      scene.fog = new THREE.Fog(0x0A1F4F, 20, 60);
+
+      // Lights
+      var ambient = new THREE.AmbientLight(0x1E50D6, 0.6);
+      scene.add(ambient);
+      var dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 5);
+      scene.add(dirLight);
+      var maroonLight = new THREE.PointLight(0x7C0000, 1.5, 20);
+      maroonLight.position.set(-5, 5, 3);
+      scene.add(maroonLight);
+
+      // Ground plane
+      var groundGeo = new THREE.PlaneGeometry(60, 30);
+      var groundMat = new THREE.MeshLambertMaterial({ color: 0x071640 });
+      var ground = new THREE.Mesh(groundGeo, groundMat);
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = 0;
+      scene.add(ground);
+
+      // Toronto skyline buildings (simplified extruded boxes)
+      var buildings = [
+        { x: -8,  h: 8,  w: 1.2, d: 1.2, col: 0x1E50D6 },
+        { x: -6,  h: 5,  w: 1.5, d: 1.5, col: 0x0D3DA5 },
+        { x: -4.5,h: 10, w: 1,   d: 1,   col: 0x1E50D6 },  // CN Tower-ish
+        { x: -3,  h: 6,  w: 1.3, d: 1.3, col: 0x0A1F4F },
+        { x: -1.5,h: 9,  w: 1.1, d: 1.1, col: 0x7C0000 },
+        { x: 0,   h: 12, w: 0.8, d: 0.8, col: 0x1E50D6 },
+        { x: 1.5, h: 7,  w: 1.4, d: 1.4, col: 0x0D3DA5 },
+        { x: 3,   h: 5,  w: 1.6, d: 1.6, col: 0x1E50D6 },
+        { x: 4.5, h: 9,  w: 1,   d: 1,   col: 0x7C0000 },
+        { x: 6,   h: 6,  w: 1.3, d: 1.3, col: 0x0A1F4F },
+        { x: 8,   h: 4,  w: 1.5, d: 1.5, col: 0x1E50D6 },
+        // Back row
+        { x: -7,  h: 4,  w: 1.8, d: 1.8, col: 0x071640, z: -4 },
+        { x: -2,  h: 6,  w: 1.5, d: 1.5, col: 0x0D2560, z: -4 },
+        { x: 2,   h: 5,  w: 1.6, d: 1.6, col: 0x071640, z: -4 },
+        { x: 7,   h: 7,  w: 1.2, d: 1.2, col: 0x0D2560, z: -4 },
+      ];
+
+      var buildingGroup = new THREE.Group();
+      buildings.forEach(function(b) {
+        var geo = new THREE.BoxGeometry(b.w, b.h, b.d);
+        var mat = new THREE.MeshLambertMaterial({ color: b.col });
+        var mesh = new THREE.Mesh(geo, mat);
+        mesh.position.set(b.x, b.h / 2, b.z || 0);
+        buildingGroup.add(mesh);
+
+        // Windows (small emissive boxes)
+        for (var row = 0; row < Math.floor(b.h * 0.6); row++) {
+          for (var col2 = 0; col2 < 2; col2++) {
+            if (Math.random() > 0.4) {
+              var wGeo = new THREE.BoxGeometry(0.1, 0.15, 0.05);
+              var wMat = new THREE.MeshBasicMaterial({ color: Math.random() > 0.5 ? 0xFFDD88 : 0x88AAFF });
+              var wMesh = new THREE.Mesh(wGeo, wMat);
+              wMesh.position.set(
+                b.x + (col2 - 0.5) * (b.w * 0.4),
+                1 + row * 1.1,
+                (b.z || 0) + b.d / 2 + 0.01
+              );
+              buildingGroup.add(wMesh);
+            }
+          }
+        }
+      });
+      scene.add(buildingGroup);
+
+      // Water in front
+      var waterGeo = new THREE.PlaneGeometry(60, 10);
+      var waterMat = new THREE.MeshLambertMaterial({ color: 0x0D2560, transparent: true, opacity: 0.7 });
+      var water = new THREE.Mesh(waterGeo, waterMat);
+      water.rotation.x = -Math.PI / 2;
+      water.position.set(0, 0.01, 8);
+      scene.add(water);
+
+      // Mouse parallax
+      var mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', function(e) {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+      });
+
+      // Resize
+      window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // Animate
+      var clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+        var t = clock.getElapsedTime();
+
+        // Slow rotation
+        buildingGroup.rotation.y = Math.sin(t * 0.08) * 0.3;
+
+        // Camera parallax from mouse
+        camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
+        camera.position.y += (-mouseY * 1 + 4 - camera.position.y) * 0.02;
+        camera.lookAt(0, 2, 0);
+
+        // Animate maroon light
+        maroonLight.position.x = Math.sin(t * 0.5) * 8;
+        maroonLight.position.z = Math.cos(t * 0.3) * 5;
+
+        renderer.render(scene, camera);
+      }
+      animate();
+    })();
+
+    // ---- GSAP SCROLL ANIMATIONS ----
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray('.fade-up').forEach(function(el) {
+        gsap.to(el, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+        });
+      });
+    } else {
+      // Fallback: just show everything
+      document.querySelectorAll('.fade-up').forEach(function(el) {
+        el.style.opacity = 1; el.style.transform = 'none';
+      });
+    }
+
+    // ---- MORTGAGE CALCULATOR ----
+    function calcPayment() {
+      var P = parseInt(document.getElementById('principalSlider').value);
+      var annualRate = parseFloat(document.getElementById('rateSlider').value);
+      var years = parseInt(document.getElementById('amortSlider').value);
+      document.getElementById('principalDisplay').textContent = '$' + P.toLocaleString();
+      document.getElementById('rateDisplay').textContent = annualRate.toFixed(2) + '%';
+      document.getElementById('amortDisplay').textContent = years + ' years';
+      var r = annualRate / 100 / 12;
+      var n = years * 12;
+      var payment = r === 0 ? P / n : P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      document.getElementById('calcResult').textContent = '$' + Math.round(payment).toLocaleString();
+    }
+    ['principalSlider','rateSlider','amortSlider'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', calcPayment);
+    });
+    calcPayment();
+  </script>
+</body>
+</html>

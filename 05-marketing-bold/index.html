@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shan Thayaparan — Realtor & Mortgage Agent</title>
+  <title>Shan Thayaparan — Realtor &amp; Mortgage Agent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -14,18 +14,17 @@
         extend: {
           fontFamily: {
             display: ['Syne', 'system-ui', 'sans-serif'],
-            sans: ['Manrope', 'system-ui', 'sans-serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
           },
           colors: {
-            purple: '#7C3AED',
-            purpleDark: '#5B21B6',
-            purpleLight: '#F5F3FF',
-            pink: '#EC4899',
-            pinkLight: '#FDF2F8',
-            violet: '#8B5CF6',
-            dark: '#0F0A1E',
-            panel: '#160F2E',
-            text: '#1E1B2E',
+            blue: '#1E50D6',
+            blueDark: '#0D3DA5',
+            blueLight: '#EBF0FD',
+            red: '#C81E1E',
+            redLight: '#FBF0F0',
+            dark: '#0A0F1E',
+            panel: '#10162B',
+            text: '#111827',
             muted: '#6B7280',
           }
         }
@@ -33,11 +32,11 @@
     }
   </script>
   <style>
-    body { font-family: 'Manrope', sans-serif; background: #F9F7FF; color: #1E1B2E; }
+    body { font-family: 'DM Sans', sans-serif; background: #F7F8FF; color: #111827; }
 
-    /* SHIMMER / ANIMATED BEAM HERO EFFECT */
+    /* ANIMATED BEAM HERO */
     .hero-gradient {
-      background: linear-gradient(135deg, #0F0A1E 0%, #1A0533 40%, #0F0A1E 100%);
+      background: linear-gradient(135deg, #0A0F1E 0%, #0D1A3A 40%, #0A0F1E 100%);
       position: relative;
       overflow: hidden;
     }
@@ -48,19 +47,18 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(124,58,237,0.15) 60deg, rgba(236,72,153,0.12) 120deg, rgba(139,92,246,0.1) 180deg, transparent 240deg);
+      background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(30,80,214,0.18) 60deg, rgba(200,30,30,0.14) 120deg, rgba(30,80,214,0.12) 180deg, transparent 240deg);
       animation: spinBeam 8s linear infinite;
     }
     @keyframes spinBeam { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    /* Shimmer line across hero */
     .shimmer-line {
       position: absolute;
       top: 0;
       left: -100%;
       width: 60%;
       height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(236,72,153,0.8), rgba(124,58,237,0.8), transparent);
+      background: linear-gradient(90deg, transparent, rgba(200,30,30,0.8), rgba(30,80,214,0.8), transparent);
       animation: slideShimmer 4s ease-in-out infinite;
     }
     .shimmer-line-2 {
@@ -69,28 +67,27 @@
       right: -100%;
       width: 40%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(139,92,246,0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(30,80,214,0.6), transparent);
       animation: slideShimmerReverse 5s ease-in-out 1.5s infinite;
     }
     @keyframes slideShimmer { 0% { left: -60%; } 100% { left: 160%; } }
     @keyframes slideShimmerReverse { 0% { right: -40%; } 100% { right: 140%; } }
 
-    /* Glow orbs */
-    .orb-purple {
+    .orb-blue {
       position: absolute;
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(124,58,237,0.25) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(30,80,214,0.28) 0%, transparent 70%);
       filter: blur(40px);
       animation: orbFloat 6s ease-in-out infinite;
     }
-    .orb-pink {
+    .orb-red {
       position: absolute;
       width: 400px;
       height: 400px;
       border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(236,72,153,0.2) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(200,30,30,0.22) 0%, transparent 70%);
       filter: blur(40px);
       animation: orbFloat 8s ease-in-out 1s infinite reverse;
     }
@@ -100,33 +97,23 @@
       66% { transform: translateY(10px) translateX(-10px); }
     }
 
-    /* Gradient text */
     .grad-text {
-      background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #8B5CF6 100%);
+      background: linear-gradient(135deg, #1E50D6 0%, #C81E1E 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .grad-bg { background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%); }
-    .grad-bg-soft { background: linear-gradient(135deg, #F5F3FF 0%, #FDF2F8 100%); }
+    .grad-bg { background: linear-gradient(135deg, #1E50D6 0%, #C81E1E 100%); }
+    .grad-bg-soft { background: linear-gradient(135deg, #EBF0FD 0%, #FBF0F0 100%); }
 
-    /* Card styles */
     .card-glow { transition: all 0.25s ease; }
-    .card-glow:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(124,58,237,0.15); }
+    .card-glow:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(30,80,214,0.18); }
     .listing-img { aspect-ratio: 16/9; object-fit: cover; }
-    input[type="range"] { accent-color: #7C3AED; }
-
-    /* Pill badge */
+    input[type="range"] { accent-color: #1E50D6; }
     .pill { border-radius: 999px; }
-
-    /* Bold section dividers */
-    .section-accent { background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%); height: 3px; }
-
-    /* Pulse dot */
+    .section-accent { background: linear-gradient(135deg, #1E50D6 0%, #C81E1E 100%); height: 3px; }
     .pulse-dot { width: 8px; height: 8px; background: #10B981; border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.3); } }
-
-    /* Animated counter */
     .counter { font-variant-numeric: tabular-nums; }
   </style>
 </head>
@@ -145,7 +132,7 @@
         <a href="#resources" class="hover:text-text transition-colors">Resources</a>
         <a href="#contact" class="hover:text-text transition-colors">Contact</a>
       </nav>
-      <a href="#contact" class="grad-bg text-white px-6 py-3 pill font-semibold text-sm shadow-lg shadow-purple/30 hover:opacity-90 transition-opacity">
+      <a href="#contact" class="grad-bg text-white px-6 py-3 pill font-semibold text-sm hover:opacity-90 transition-opacity" style="box-shadow:0 4px 16px rgba(30,80,214,0.3);">
         Get Pre-Approved
       </a>
     </div>
@@ -153,53 +140,50 @@
 
   <!-- HERO - ANIMATED BEAM / SHIMMER -->
   <section class="hero-gradient min-h-screen flex items-center relative">
-    <!-- Glow orbs -->
-    <div class="orb-purple top-10 left-10"></div>
-    <div class="orb-pink bottom-20 right-10"></div>
-    <!-- Shimmer lines -->
+    <div class="orb-blue top-10 left-10"></div>
+    <div class="orb-red bottom-20 right-10"></div>
     <div class="shimmer-line"></div>
     <div class="shimmer-line-2"></div>
 
     <div class="max-w-6xl mx-auto px-6 py-24 relative z-10 w-full">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <!-- Status badge -->
-          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 pill px-4 py-2 mb-8 backdrop-blur-sm">
+          <div class="inline-flex items-center gap-2 border border-white/20 pill px-4 py-2 mb-8 backdrop-blur-sm" style="background:rgba(255,255,255,0.1);">
             <div class="pulse-dot"></div>
             <span class="text-white/80 text-xs font-medium">Dual-Licensed · GTA's Realtor &amp; Mortgage Agent</span>
           </div>
           <h1 class="font-display text-5xl md:text-7xl font-extrabold text-white leading-none mb-6">
             Home.<br/>
-            <span style="background:linear-gradient(135deg,#EC4899,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mortgage.</span><br/>
-            <span class="text-white/90">Sorted.</span>
+            <span style="background:linear-gradient(135deg,#C81E1E,#1E50D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mortgage.</span><br/>
+            <span style="color:rgba(255,255,255,0.9);">Sorted.</span>
           </h1>
           <p class="text-white/70 text-lg leading-relaxed mb-10 max-w-lg">
             As a seasoned real estate expert for over two decades, Shan Thayaparan holds both a RE/MAX broker licence and an FSRA Level-2 mortgage agent designation. The Greater Toronto Area's dual-licensed expert — from listing to closing to financing.
           </p>
           <!-- Dual CTA -->
           <div class="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href="/listings" class="grad-bg text-white px-8 py-5 pill font-bold text-base shadow-2xl shadow-purple/40 hover:opacity-90 transition-all text-center transform hover:scale-105 active:scale-95">
+            <a href="/listings" class="grad-bg text-white px-8 py-5 pill font-bold text-base text-center transform hover:scale-105 active:scale-95 transition-all" style="box-shadow:0 8px 32px rgba(30,80,214,0.4);">
               I'm Looking for a Home →
             </a>
-            <a href="/mortgage" class="bg-white/10 border border-white/30 text-white px-8 py-5 pill font-bold text-base backdrop-blur-sm hover:bg-white/20 transition-all text-center">
+            <a href="/mortgage" class="border text-white px-8 py-5 pill font-bold text-base backdrop-blur-sm hover:bg-white/20 transition-all text-center" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.3);">
               I Need a Mortgage →
             </a>
           </div>
           <!-- Stat badges -->
           <div class="flex flex-wrap gap-4">
-            <div class="bg-white/10 backdrop-blur-sm border border-white/20 pill px-5 py-2.5 text-center">
+            <div class="border border-white/20 pill px-5 py-2.5 text-center backdrop-blur-sm" style="background:rgba(255,255,255,0.1);">
               <div class="text-2xl font-display font-bold text-white counter" data-target="20" data-suffix="+">0+</div>
               <div class="text-xs text-white/60">Years</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm border border-white/20 pill px-5 py-2.5 text-center">
+            <div class="border border-white/20 pill px-5 py-2.5 text-center backdrop-blur-sm" style="background:rgba(255,255,255,0.1);">
               <div class="text-2xl font-display font-bold text-white counter" data-target="80" data-suffix="%">0%</div>
               <div class="text-xs text-white/60">Referrals</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm border border-white/20 pill px-5 py-2.5 text-center">
+            <div class="border border-white/20 pill px-5 py-2.5 text-center backdrop-blur-sm" style="background:rgba(255,255,255,0.1);">
               <div class="text-2xl font-display font-bold text-white counter" data-target="500" data-suffix="+">0+</div>
               <div class="text-xs text-white/60">Families <span class="text-white/40">(confirm)</span></div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm border border-white/20 pill px-5 py-2.5 text-center">
+            <div class="border border-white/20 pill px-5 py-2.5 text-center backdrop-blur-sm" style="background:rgba(255,255,255,0.1);">
               <div class="text-xl font-display font-bold text-white">2</div>
               <div class="text-xs text-white/60">Licences</div>
             </div>
@@ -208,8 +192,7 @@
         <!-- Right: Photo with glow frame -->
         <div class="flex justify-center relative">
           <div class="relative">
-            <!-- Glow ring -->
-            <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(124,58,237,0.5),rgba(236,72,153,0.5));filter:blur(20px);transform:scale(1.1);"></div>
+            <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(30,80,214,0.5),rgba(200,30,30,0.5));filter:blur(20px);transform:scale(1.1);"></div>
             <img src="../assets/shan.jpg" alt="Shan Thayaparan" class="relative z-10 w-72 md:w-80 rounded-3xl border-2 border-white/20" />
             <!-- Trust card overlay -->
             <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-white rounded-2xl shadow-2xl p-4 z-20 w-64 text-center">
@@ -247,12 +230,12 @@
   <section id="listings" class="max-w-6xl mx-auto px-6 py-20">
     <div class="flex justify-between items-end mb-4">
       <div>
-        <span class="inline-block bg-purple/10 text-purple text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Featured Listings</span>
+        <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style="background:#EBF0FD;color:#1E50D6;">Featured Listings</span>
         <h2 class="font-display text-4xl font-bold text-text">Homes worth<br/><span class="grad-text">talking about</span></h2>
       </div>
-      <a href="/listings" class="text-sm font-semibold text-purple hover:text-purpleDark">All Listings →</a>
+      <a href="/listings" class="text-sm font-semibold hover:opacity-70" style="color:#1E50D6;">All Listings →</a>
     </div>
-    <p class="text-xs text-muted mb-8 bg-amber-50 border border-amber-200 rounded-full inline-flex items-center gap-2 px-4 py-2">
+    <p class="text-xs text-muted mb-8 border rounded-full inline-flex items-center gap-2 px-4 py-2" style="background:#FEF3C7;border-color:#FDE68A;">
       <span>Sample listings — live IDX coming from PropTx</span>
     </p>
     <div class="grid md:grid-cols-3 gap-6">
@@ -267,9 +250,9 @@
           <div class="font-semibold text-text mb-1">145 Birchwood Cres</div>
           <div class="text-sm text-muted mb-3">Pickering, ON · MLS# E1234567</div>
           <div class="flex gap-3 text-sm text-muted border-t border-gray-100 pt-3 mb-3">
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">4 beds</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">3 baths</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">2,150 ft²</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">4 beds</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">3 baths</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">2,150 ft²</span>
           </div>
           <div class="text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
         </div>
@@ -285,9 +268,9 @@
           <div class="font-semibold text-text mb-1">88 Lakeview Dr</div>
           <div class="text-sm text-muted mb-3">Ajax, ON · MLS# E2345678</div>
           <div class="flex gap-3 text-sm text-muted border-t border-gray-100 pt-3 mb-3">
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">3 beds</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">2 baths</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">1,640 ft²</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">3 beds</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">2 baths</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">1,640 ft²</span>
           </div>
           <div class="text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
         </div>
@@ -296,16 +279,16 @@
       <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 card-glow">
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="31 Scarlett Rd" class="listing-img w-full" />
-          <div class="absolute top-3 left-3 bg-pink text-white text-xs font-bold px-3 py-1.5 pill">New Listing</div>
+          <div class="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1.5 pill" style="background:#C81E1E;">New Listing</div>
         </div>
         <div class="p-6">
           <div class="font-display text-2xl font-bold text-text mb-1">$699,900</div>
           <div class="font-semibold text-text mb-1">31 Scarlett Rd, Unit 412</div>
           <div class="text-sm text-muted mb-3">Scarborough, ON · MLS# E3456789</div>
           <div class="flex gap-3 text-sm text-muted border-t border-gray-100 pt-3 mb-3">
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">2 beds</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">2 baths</span>
-            <span class="bg-purple/5 px-2 py-1 rounded-lg text-xs font-medium">920 ft²</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">2 beds</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">2 baths</span>
+            <span class="px-2 py-1 rounded-lg text-xs font-medium" style="background:#EBF0FD;">920 ft²</span>
           </div>
           <div class="text-xs text-muted italic">Listing courtesy of RE/MAX Community Realty</div>
         </div>
@@ -314,27 +297,26 @@
   </section>
 
   <!-- MORTGAGE CALCULATOR -->
-  <section id="mortgage" class="py-20" style="background:linear-gradient(135deg,#F5F3FF 0%,#FDF2F8 100%)">
+  <section id="mortgage" class="py-20 grad-bg-soft">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <span class="inline-block bg-purple/10 text-purple text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Mortgage Tools</span>
+          <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:#EBF0FD;color:#1E50D6;">Mortgage Tools</span>
           <h2 class="font-display text-4xl font-bold text-text mt-2 mb-4">Know your<br/><span class="grad-text">monthly payment</span><br/>before you buy.</h2>
           <p class="text-muted leading-relaxed mb-8">Adjust the sliders below. Estimates only — not a commitment to lend. For real numbers personalized to your situation, book a call with Shan.</p>
-          <!-- Tool coming soon block -->
-          <div class="bg-white rounded-3xl p-6 border border-purple/10 shadow-sm">
+          <div class="bg-white rounded-3xl p-6 border shadow-sm" style="border-color:#EBF0FD;">
             <div class="font-semibold text-text mb-3 flex items-center gap-2">
               <span class="grad-text font-display">+4</span> more tools coming
             </div>
             <div class="grid grid-cols-2 gap-3">
-              <div class="bg-purple/5 rounded-xl px-4 py-3 text-sm text-text font-medium">Stress Test (B-20)</div>
-              <div class="bg-purple/5 rounded-xl px-4 py-3 text-sm text-text font-medium">Affordability Calc</div>
-              <div class="bg-purple/5 rounded-xl px-4 py-3 text-sm text-text font-medium">Land Transfer Tax</div>
-              <div class="bg-purple/5 rounded-xl px-4 py-3 text-sm text-text font-medium">CMHC Premium</div>
+              <div class="rounded-xl px-4 py-3 text-sm text-text font-medium" style="background:#EBF0FD;">Stress Test (B-20)</div>
+              <div class="rounded-xl px-4 py-3 text-sm text-text font-medium" style="background:#EBF0FD;">Affordability Calc</div>
+              <div class="rounded-xl px-4 py-3 text-sm text-text font-medium" style="background:#EBF0FD;">Land Transfer Tax</div>
+              <div class="rounded-xl px-4 py-3 text-sm text-text font-medium" style="background:#EBF0FD;">CMHC Premium</div>
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-3xl shadow-sm border border-purple/10 p-8">
+        <div class="bg-white rounded-3xl shadow-sm border p-8" style="border-color:#EBF0FD;">
           <div class="space-y-6 mb-8">
             <div>
               <div class="flex justify-between mb-2">
@@ -377,7 +359,7 @@
   <!-- WHY SHAN - Bold blocks -->
   <section id="about" class="max-w-6xl mx-auto px-6 py-20">
     <div class="text-center mb-12">
-      <span class="inline-block bg-purple/10 text-purple text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Why Work With Shan</span>
+      <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:#EBF0FD;color:#1E50D6;">Why Work With Shan</span>
       <h2 class="font-display text-4xl md:text-5xl font-bold text-text">Three reasons to<br/><span class="grad-text">choose Shan</span></h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
@@ -386,7 +368,7 @@
         <h3 class="font-display text-2xl font-bold mb-3">Dual-Licensed Advantage</h3>
         <p class="text-white/60 leading-relaxed text-sm">Real estate broker licence + FSRA Level-2 mortgage agent. One trusted advisor from listing to financing. No handoffs, no gaps, no conflicts.</p>
       </div>
-      <div class="grad-bg text-white rounded-3xl p-8 card-glow shadow-2xl shadow-purple/30">
+      <div class="grad-bg text-white rounded-3xl p-8 card-glow" style="box-shadow:0 8px 40px rgba(30,80,214,0.3);">
         <div class="text-5xl font-display font-bold text-white/30 mb-4">02</div>
         <h3 class="font-display text-2xl font-bold mb-3">GTA Local Expert</h3>
         <p class="text-white/70 leading-relaxed text-sm">Scarborough, Pickering, Ajax, Oshawa, Toronto — 20+ years. Diamond Award. 80% referral business. That's not a pitch, that's a proven track record.</p>
@@ -404,51 +386,50 @@
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex justify-between items-end mb-10">
         <div>
-          <span class="inline-block bg-purple/20 text-violet-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Resources</span>
-          <h2 class="font-display text-4xl font-bold text-white">Knowledge is<br/><span style="background:linear-gradient(135deg,#EC4899,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">your superpower</span></h2>
+          <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:rgba(30,80,214,0.25);color:#7BA3F5;">Resources</span>
+          <h2 class="font-display text-4xl font-bold text-white">Knowledge is<br/><span style="background:linear-gradient(135deg,#C81E1E,#1E50D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">your superpower</span></h2>
         </div>
-        <a href="/resources" class="text-sm font-semibold text-violet-400 hover:text-violet-300">All articles →</a>
+        <a href="/resources" class="text-sm font-semibold hover:opacity-70" style="color:#7BA3F5;">All articles →</a>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-panel rounded-3xl p-6 border border-white/10 card-glow">
-          <span class="inline-block bg-purple/20 text-violet-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Mortgage Tips</span>
+        <div class="bg-panel rounded-3xl p-6 border card-glow" style="border-color:rgba(255,255,255,0.1);">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:rgba(30,80,214,0.25);color:#7BA3F5;">Mortgage Tips</span>
           <h3 class="font-display text-xl font-bold text-white mb-3">The B-20 Stress Test Explained</h3>
           <p class="text-sm text-white/50 leading-relaxed mb-4">OSFI's qualifying rate rule affects how much you can borrow. Here's how it works.</p>
-          <a href="#" class="text-sm font-semibold text-violet-400 hover:text-violet-300">Read article →</a>
+          <a href="#" class="text-sm font-semibold hover:opacity-70" style="color:#7BA3F5;">Read article →</a>
         </div>
-        <div class="bg-panel rounded-3xl p-6 border border-white/10 card-glow">
-          <span class="inline-block bg-pink/20 text-pink-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Market Update</span>
+        <div class="bg-panel rounded-3xl p-6 border card-glow" style="border-color:rgba(255,255,255,0.1);">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:rgba(200,30,30,0.2);color:#F08080;">Market Update</span>
           <h3 class="font-display text-xl font-bold text-white mb-3">Scarborough &amp; Pickering: Spring 2026</h3>
           <p class="text-sm text-white/50 leading-relaxed mb-4">Active listings, days on market, and price trends for GTA communities Shan serves.</p>
-          <a href="#" class="text-sm font-semibold text-pink-400 hover:text-pink-300">Read article →</a>
+          <a href="#" class="text-sm font-semibold hover:opacity-70" style="color:#F08080;">Read article →</a>
         </div>
-        <div class="bg-panel rounded-3xl p-6 border border-white/10 card-glow">
-          <span class="inline-block bg-purple/20 text-violet-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Buyer Guide</span>
+        <div class="bg-panel rounded-3xl p-6 border card-glow" style="border-color:rgba(255,255,255,0.1);">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4" style="background:rgba(30,80,214,0.25);color:#7BA3F5;">Buyer Guide</span>
           <h3 class="font-display text-xl font-bold text-white mb-3">First-Time Buyer's Checklist</h3>
           <p class="text-sm text-white/50 leading-relaxed mb-4">From pre-approval to keys in hand — a plain-language guide to buying in Ontario.</p>
-          <a href="#" class="text-sm font-semibold text-violet-400 hover:text-violet-300">Read article →</a>
+          <a href="#" class="text-sm font-semibold hover:opacity-70" style="color:#7BA3F5;">Read article →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA BAND -->
-  <section id="contact" class="relative py-24 overflow-hidden" style="background:linear-gradient(135deg,#7C3AED 0%,#EC4899 100%)">
-    <!-- Background shimmer -->
+  <section id="contact" class="relative py-24 overflow-hidden grad-bg">
     <div class="absolute inset-0 overflow-hidden">
       <div class="shimmer-line" style="animation-duration:3s;"></div>
       <div class="shimmer-line-2" style="animation-duration:4s;"></div>
-      <div class="orb-purple" style="top:10%;left:-5%;opacity:0.4;"></div>
+      <div class="orb-blue" style="top:10%;left:-5%;opacity:0.4;"></div>
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-      <div class="inline-block bg-white/10 border border-white/20 pill px-4 py-2 text-xs font-semibold uppercase tracking-widest mb-6">Ready to make a move?</div>
+      <div class="inline-block border border-white/20 pill px-4 py-2 text-xs font-semibold uppercase tracking-widest mb-6" style="background:rgba(255,255,255,0.1);">Ready to make a move?</div>
       <h2 class="font-display text-5xl md:text-7xl font-extrabold mb-4">Let's make it<br/>happen.</h2>
       <p class="text-white/70 text-lg mb-10">Book a free 15-minute consultation or get a quick rate quote — no commitment needed.</p>
       <div class="flex flex-col sm:flex-row gap-5 justify-center">
-        <a href="tel:4168264742" class="bg-white text-purple font-bold px-10 py-5 pill text-base shadow-2xl hover:bg-purple hover:text-white transition-all transform hover:scale-105">
+        <a href="tel:4168264742" class="bg-white font-bold px-10 py-5 pill text-base shadow-2xl hover:opacity-95 transition-all transform hover:scale-105" style="color:#1E50D6;">
           Book a 15-Minute Call
         </a>
-        <a href="#mortgage" class="bg-white/15 border-2 border-white/40 text-white font-bold px-10 py-5 pill text-base hover:bg-white/25 transition-all">
+        <a href="#mortgage" class="border-2 border-white/40 text-white font-bold px-10 py-5 pill text-base transition-all" style="background:rgba(255,255,255,0.15);">
           Get a Quick Rate Quote
         </a>
       </div>
@@ -456,18 +437,18 @@
   </section>
 
   <!-- COMPLIANCE FOOTER -->
-  <footer class="bg-dark border-t border-white/10">
+  <footer class="border-t" style="background:#0A0F1E;border-color:rgba(255,255,255,0.1);">
     <div class="max-w-6xl mx-auto px-6 py-12">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
           <div class="font-display text-xl font-bold mb-3">
             Shan<span class="grad-text">.</span>
           </div>
-          <p class="text-sm text-white/40 leading-relaxed">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.4);">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
         </div>
         <div>
-          <div class="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">Legal Disclosures</div>
-          <div class="text-xs text-white/40 space-y-1.5 leading-relaxed">
+          <div class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.3);">Legal Disclosures</div>
+          <div class="text-xs space-y-1.5 leading-relaxed" style="color:rgba(255,255,255,0.4);">
             <div>RE/MAX Community Realty · RECO #47117293</div>
             <div>Mortgage Agent: Mo8009140</div>
             <div>Brokerage Lic #15422265 · License #2154151</div>
@@ -475,17 +456,17 @@
           </div>
         </div>
         <div>
-          <div class="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">Legal</div>
-          <div class="text-sm text-white/40 space-y-2">
+          <div class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.3);">Legal</div>
+          <div class="text-sm space-y-2" style="color:rgba(255,255,255,0.4);">
             <div><a href="#" class="hover:text-white/70 transition-colors">Privacy Policy</a></div>
             <div><a href="#" class="hover:text-white/70 transition-colors">Terms of Use</a></div>
             <div><a href="#" class="hover:text-white/70 transition-colors">Accessibility</a></div>
           </div>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="text-xs text-white/25">© 2026 Shan Thayaparan. All rights reserved.</div>
-        <div class="text-xs text-white/25">Website by <a href="https://winwinmarketing.ca" class="hover:text-white/50">WinWin Marketing</a></div>
+      <div class="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-4" style="border-color:rgba(255,255,255,0.1);">
+        <div class="text-xs" style="color:rgba(255,255,255,0.25);">© 2026 Shan Thayaparan. All rights reserved.</div>
+        <div class="text-xs" style="color:rgba(255,255,255,0.25);">Website by <a href="https://winwinmarketing.ca" class="hover:text-white/50">WinWin Marketing</a></div>
       </div>
     </div>
   </footer>

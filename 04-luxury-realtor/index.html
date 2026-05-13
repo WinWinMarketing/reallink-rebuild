@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shan Thayaparan — Realtor & Mortgage Agent</title>
+  <title>Shan Thayaparan — Realtor &amp; Mortgage Agent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -14,42 +14,41 @@
         extend: {
           fontFamily: {
             serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-            sans: ['Jost', 'system-ui', 'sans-serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
           },
           colors: {
-            gold: '#C9A961',
-            goldDark: '#A88540',
-            goldLight: '#F5EFE0',
-            dark: '#0D0D0D',
-            charcoal: '#1C1C1C',
-            panel: '#161616',
-            cream: '#F4EFE4',
-            muted: '#888888',
-            mutedDark: '#555555',
+            dark: '#0A1F4F',
+            darkMid: '#0D2560',
+            panel: '#071640',
+            navy: '#0D3DA5',
+            maroon: '#7C0000',
+            cream: '#F4F0E8',
+            muted: '#8899BB',
+            mutedDark: '#4A5C8A',
           }
         }
       }
     }
   </script>
   <style>
-    body { background: #0D0D0D; color: #F4EFE4; font-family: 'Jost', sans-serif; }
-    .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A961 50%, transparent); }
-    .gold-line-left { height: 1px; background: linear-gradient(90deg, #C9A961, transparent); }
-    .hero-overlay { background: linear-gradient(to right, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.6) 50%, rgba(13,13,13,0.2) 100%); }
-    .section-dark { background: #1C1C1C; }
-    .section-panel { background: #161616; }
-    .gold-text { color: #C9A961; }
+    body { background: #0A1F4F; color: #F4F0E8; font-family: 'DM Sans', sans-serif; }
+    .maroon-line { height: 1px; background: linear-gradient(90deg, transparent, #7C0000 50%, transparent); }
+    .maroon-line-left { height: 1px; background: linear-gradient(90deg, #7C0000, transparent); }
+    .hero-overlay { background: linear-gradient(to right, rgba(10,31,79,0.92) 0%, rgba(10,31,79,0.65) 50%, rgba(10,31,79,0.25) 100%); }
+    .section-dark { background: #071640; }
+    .maroon-text { color: #7C0000; }
     .listing-img { aspect-ratio: 3/2; object-fit: cover; }
-    .card-gold:hover { box-shadow: 0 0 0 1px #C9A961, 0 8px 32px rgba(201,169,97,0.15); }
-    .gold-border { border: 1px solid rgba(201,169,97,0.3); }
-    .gold-border:hover { border-color: #C9A961; }
-    .gold-btn { background: #C9A961; color: #0D0D0D; }
-    .gold-btn:hover { background: #A88540; }
-    .ghost-btn { border: 1px solid rgba(201,169,97,0.5); color: #C9A961; }
-    .ghost-btn:hover { background: rgba(201,169,97,0.1); border-color: #C9A961; }
-    input[type="range"] { accent-color: #C9A961; }
-    .nav-glass { background: rgba(13,13,13,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,97,0.15); }
+    .card-accent:hover { box-shadow: 0 0 0 1px #7C0000, 0 8px 32px rgba(124,0,0,0.2); }
+    .accent-border { border: 1px solid rgba(124,0,0,0.35); }
+    .accent-border:hover { border-color: #7C0000; }
+    .maroon-btn { background: #7C0000; color: #F4F0E8; }
+    .maroon-btn:hover { background: #5C0000; }
+    .ghost-btn { border: 1px solid rgba(124,0,0,0.5); color: #F4F0E8; }
+    .ghost-btn:hover { background: rgba(124,0,0,0.1); border-color: #7C0000; }
+    input[type="range"] { accent-color: #7C0000; }
+    .nav-glass { background: rgba(10,31,79,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(124,0,0,0.2); }
     .transition-smooth { transition: all 0.3s ease; }
+    .cream-text { color: #F4F0E8; }
   </style>
 </head>
 <body>
@@ -57,8 +56,8 @@
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="#" class="font-serif text-2xl font-light tracking-[0.15em] text-cream">
-        SHAN <span class="gold-text">THAYAPARAN</span>
+      <a href="#" class="font-serif text-2xl font-light tracking-[0.15em] cream-text">
+        SHAN <span class="maroon-text">THAYAPARAN</span>
       </a>
       <nav class="hidden md:flex items-center gap-8 font-sans text-xs tracking-[0.12em] uppercase text-muted">
         <a href="#listings" class="hover:text-cream transition-smooth">Listings</a>
@@ -67,7 +66,7 @@
         <a href="#resources" class="hover:text-cream transition-smooth">Resources</a>
         <a href="#contact" class="hover:text-cream transition-smooth">Contact</a>
       </nav>
-      <a href="#contact" class="gold-btn px-6 py-3 font-sans text-xs tracking-[0.1em] uppercase font-medium transition-smooth">
+      <a href="#contact" class="maroon-btn px-6 py-3 font-sans text-xs tracking-[0.1em] uppercase font-medium transition-smooth">
         Get Pre-Approved
       </a>
     </div>
@@ -81,20 +80,20 @@
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
       <div class="max-w-2xl">
-        <div class="gold-line-left w-24 mb-8"></div>
-        <p class="font-sans text-xs tracking-[0.2em] uppercase gold-text mb-4">Dual-Licensed · Realtor &amp; Mortgage Agent · GTA</p>
-        <h1 class="font-serif text-6xl md:text-8xl font-light text-cream leading-tight mb-6">
+        <div class="maroon-line-left w-24 mb-8"></div>
+        <p class="font-sans text-xs tracking-[0.2em] uppercase maroon-text mb-4">Dual-Licensed · Realtor &amp; Mortgage Agent · GTA</p>
+        <h1 class="font-serif text-6xl md:text-8xl font-light cream-text leading-tight mb-6">
           Exceptional<br/>
           <em class="italic">Homes.</em><br/>
           Exceptional<br/>
           <em class="italic">Advice.</em>
         </h1>
-        <p class="font-sans text-base text-cream/70 leading-relaxed mb-10 max-w-lg">
+        <p class="font-sans text-base leading-relaxed mb-10 max-w-lg" style="color:rgba(244,240,232,0.7);">
           As a seasoned real estate expert for over two decades, Shan Thayaparan brings the rare advantage of dual licensure — RE/MAX broker and FSRA Level-2 mortgage agent — to serve the Greater Toronto Area with uncompromising care.
         </p>
         <!-- Dual CTA -->
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/listings" class="gold-btn px-8 py-4 font-sans text-xs tracking-[0.1em] uppercase font-medium text-center transition-smooth">
+          <a href="/listings" class="maroon-btn px-8 py-4 font-sans text-xs tracking-[0.1em] uppercase font-medium text-center transition-smooth">
             I'm Looking for a Home
           </a>
           <a href="/mortgage" class="ghost-btn px-8 py-4 font-sans text-xs tracking-[0.1em] uppercase font-medium text-center transition-smooth">
@@ -105,22 +104,22 @@
     </div>
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
-      <div class="gold-line w-px h-8"></div>
+      <div class="maroon-line w-px h-8"></div>
       <span class="font-sans text-xs tracking-[0.15em] uppercase text-muted">Scroll</span>
     </div>
   </section>
 
   <!-- TRUST STRIP -->
-  <div class="section-dark border-y gold-border" style="border-left:none;border-right:none;">
+  <div class="section-dark border-y accent-border" style="border-left:none;border-right:none;">
     <div class="max-w-7xl mx-auto px-6 py-6">
       <div class="flex flex-wrap gap-10 justify-center items-center font-sans text-xs tracking-[0.1em] uppercase text-muted">
-        <span class="gold-text font-medium">RE/MAX Community Realty</span>
+        <span class="maroon-text font-medium">RE/MAX Community Realty</span>
         <span class="text-mutedDark">·</span>
         <span>FSRA Level-2 Mortgage Agent</span>
         <span class="text-mutedDark">·</span>
         <span>RECO Registered</span>
         <span class="text-mutedDark">·</span>
-        <span class="gold-text font-medium">Diamond Award Recipient</span>
+        <span class="maroon-text font-medium">Diamond Award Recipient</span>
         <span class="text-mutedDark">·</span>
         <span>20+ Years Experience</span>
       </div>
@@ -131,36 +130,36 @@
   <section class="max-w-7xl mx-auto px-6 py-24">
     <div class="grid md:grid-cols-12 gap-12 items-center">
       <div class="md:col-span-5 relative">
-        <img src="../assets/shan.jpg" alt="Shan Thayaparan" class="w-full max-w-sm mx-auto md:mx-0 object-cover" style="filter:sepia(0.15) contrast(1.05);" />
-        <div class="absolute -bottom-6 -right-6 bg-charcoal gold-border p-5 w-48 hidden md:block">
-          <div class="font-serif text-4xl gold-text font-light">80%</div>
+        <img src="../assets/shan.jpg" alt="Shan Thayaparan" class="w-full max-w-sm mx-auto md:mx-0 object-cover" style="filter:sepia(0.1) contrast(1.05);" />
+        <div class="absolute -bottom-6 -right-6 bg-darkMid accent-border p-5 w-48 hidden md:block">
+          <div class="font-serif text-4xl maroon-text font-light">80%</div>
           <div class="font-sans text-xs tracking-wider text-muted uppercase mt-1">Referral Business</div>
         </div>
       </div>
       <div class="md:col-span-7 md:pl-8">
-        <div class="gold-line-left w-16 mb-6"></div>
-        <p class="font-sans text-xs tracking-[0.15em] uppercase gold-text mb-3">About Shan</p>
-        <h2 class="font-serif text-5xl font-light text-cream mb-6 leading-tight">
+        <div class="maroon-line-left w-16 mb-6"></div>
+        <p class="font-sans text-xs tracking-[0.15em] uppercase maroon-text mb-3">About Shan</p>
+        <h2 class="font-serif text-5xl font-light cream-text mb-6 leading-tight">
           Two decades of<br/>
           <em class="italic">trusted expertise</em>
         </h2>
-        <p class="font-sans text-cream/70 leading-relaxed mb-4">
+        <p class="font-sans leading-relaxed mb-4" style="color:rgba(244,240,232,0.7);">
           As a seasoned real estate expert for over two decades, Shan has helped countless individuals seize life-changing investment opportunities. His diverse background in technology, community engagement, politics, retail, and entrepreneurship has uniquely prepared him to serve clients with exceptional care and expertise.
         </p>
-        <p class="font-sans text-cream/70 leading-relaxed mb-8">
+        <p class="font-sans leading-relaxed mb-8" style="color:rgba(244,240,232,0.7);">
           With his top-performing team, Shan strives to deliver service that surpasses expectations — earning top accolades like the coveted Diamond personal and Diamond Team awards. When you work with Shan, your satisfaction is not just a promise — it's a guarantee.
         </p>
-        <div class="grid grid-cols-3 gap-6 mb-8 border-t border-b gold-border py-6" style="border-left:none;border-right:none;">
+        <div class="grid grid-cols-3 gap-6 mb-8 border-t border-b accent-border py-6" style="border-left:none;border-right:none;">
           <div class="text-center">
-            <div class="font-serif text-4xl gold-text font-light">20+</div>
+            <div class="font-serif text-4xl maroon-text font-light">20+</div>
             <div class="font-sans text-xs tracking-wider text-muted uppercase mt-1">Years</div>
           </div>
-          <div class="text-center border-x gold-border" style="border-top:none;border-bottom:none;">
-            <div class="font-serif text-4xl gold-text font-light">2</div>
+          <div class="text-center border-x accent-border" style="border-top:none;border-bottom:none;">
+            <div class="font-serif text-4xl maroon-text font-light">2</div>
             <div class="font-sans text-xs tracking-wider text-muted uppercase mt-1">Licences</div>
           </div>
           <div class="text-center">
-            <div class="font-serif text-4xl gold-text font-light">5</div>
+            <div class="font-serif text-4xl maroon-text font-light">5</div>
             <div class="font-sans text-xs tracking-wider text-muted uppercase mt-1">Team Members</div>
           </div>
         </div>
@@ -173,69 +172,69 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex justify-between items-end mb-3">
         <div>
-          <div class="gold-line-left w-12 mb-4"></div>
-          <p class="font-sans text-xs tracking-[0.15em] uppercase gold-text mb-2">Featured Properties</p>
-          <h2 class="font-serif text-5xl font-light text-cream">Exclusive Listings</h2>
+          <div class="maroon-line-left w-12 mb-4"></div>
+          <p class="font-sans text-xs tracking-[0.15em] uppercase maroon-text mb-2">Featured Properties</p>
+          <h2 class="font-serif text-5xl font-light cream-text">Exclusive Listings</h2>
         </div>
-        <a href="/listings" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-gold transition-smooth">All Properties →</a>
+        <a href="/listings" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-maroon transition-smooth">All Properties →</a>
       </div>
       <p class="font-sans text-xs text-muted mb-10">Sample listings — live IDX coming from PropTx</p>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="group gold-border bg-panel transition-smooth card-gold cursor-pointer">
+        <div class="group accent-border bg-panel transition-smooth card-accent cursor-pointer">
           <div class="overflow-hidden">
             <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="145 Birchwood Cres" class="listing-img w-full group-hover:scale-105 transition-smooth" />
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start mb-3">
-              <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">For Sale</span>
+              <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">For Sale</span>
             </div>
-            <div class="font-serif text-3xl font-light text-cream mb-2">$1,189,000</div>
-            <div class="font-sans text-sm font-medium text-cream mb-1">145 Birchwood Cres</div>
+            <div class="font-serif text-3xl font-light cream-text mb-2">$1,189,000</div>
+            <div class="font-sans text-sm font-medium cream-text mb-1">145 Birchwood Cres</div>
             <div class="font-sans text-xs text-muted mb-4">Pickering, ON · MLS# E1234567</div>
-            <div class="gold-line mb-4"></div>
+            <div class="maroon-line mb-4"></div>
             <div class="flex gap-4 font-sans text-xs text-muted mb-3">
               <span>4 Beds</span><span>3 Baths</span><span>2,150 sqft</span>
             </div>
-            <div class="font-sans text-xs text-muted/60 italic">Listing courtesy of RE/MAX Community Realty</div>
+            <div class="font-sans text-xs italic" style="color:rgba(136,153,187,0.6);">Listing courtesy of RE/MAX Community Realty</div>
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="group gold-border bg-panel transition-smooth card-gold cursor-pointer">
+        <div class="group accent-border bg-panel transition-smooth card-accent cursor-pointer">
           <div class="overflow-hidden">
             <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="88 Lakeview Dr" class="listing-img w-full group-hover:scale-105 transition-smooth" />
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start mb-3">
-              <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">For Sale</span>
+              <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">For Sale</span>
             </div>
-            <div class="font-serif text-3xl font-light text-cream mb-2">$879,000</div>
-            <div class="font-sans text-sm font-medium text-cream mb-1">88 Lakeview Dr</div>
+            <div class="font-serif text-3xl font-light cream-text mb-2">$879,000</div>
+            <div class="font-sans text-sm font-medium cream-text mb-1">88 Lakeview Dr</div>
             <div class="font-sans text-xs text-muted mb-4">Ajax, ON · MLS# E2345678</div>
-            <div class="gold-line mb-4"></div>
+            <div class="maroon-line mb-4"></div>
             <div class="flex gap-4 font-sans text-xs text-muted mb-3">
               <span>3 Beds</span><span>2 Baths</span><span>1,640 sqft</span>
             </div>
-            <div class="font-sans text-xs text-muted/60 italic">Listing courtesy of RE/MAX Community Realty</div>
+            <div class="font-sans text-xs italic" style="color:rgba(136,153,187,0.6);">Listing courtesy of RE/MAX Community Realty</div>
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="group gold-border bg-panel transition-smooth card-gold cursor-pointer">
+        <div class="group accent-border bg-panel transition-smooth card-accent cursor-pointer">
           <div class="overflow-hidden">
             <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="31 Scarlett Rd" class="listing-img w-full group-hover:scale-105 transition-smooth" />
           </div>
           <div class="p-6">
             <div class="flex justify-between items-start mb-3">
-              <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">New Listing</span>
+              <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">New Listing</span>
             </div>
-            <div class="font-serif text-3xl font-light text-cream mb-2">$699,900</div>
-            <div class="font-sans text-sm font-medium text-cream mb-1">31 Scarlett Rd, Unit 412</div>
+            <div class="font-serif text-3xl font-light cream-text mb-2">$699,900</div>
+            <div class="font-sans text-sm font-medium cream-text mb-1">31 Scarlett Rd, Unit 412</div>
             <div class="font-sans text-xs text-muted mb-4">Scarborough, ON · MLS# E3456789</div>
-            <div class="gold-line mb-4"></div>
+            <div class="maroon-line mb-4"></div>
             <div class="flex gap-4 font-sans text-xs text-muted mb-3">
               <span>2 Beds</span><span>2 Baths</span><span>920 sqft</span>
             </div>
-            <div class="font-sans text-xs text-muted/60 italic">Listing courtesy of RE/MAX Community Realty</div>
+            <div class="font-sans text-xs italic" style="color:rgba(136,153,187,0.6);">Listing courtesy of RE/MAX Community Realty</div>
           </div>
         </div>
       </div>
@@ -246,13 +245,13 @@
   <section id="mortgage" class="max-w-7xl mx-auto px-6 py-24">
     <div class="grid md:grid-cols-2 gap-16 items-start">
       <div>
-        <div class="gold-line-left w-12 mb-6"></div>
-        <p class="font-sans text-xs tracking-[0.15em] uppercase gold-text mb-3">Mortgage Tools</p>
-        <h2 class="font-serif text-5xl font-light text-cream mb-6">Payment<br/><em class="italic">Calculator</em></h2>
-        <p class="font-sans text-cream/60 leading-relaxed mb-8">Estimates only — not a commitment to lend. Contact Shan for personalized advice tailored to your financial situation.</p>
-        <div class="gold-border p-5">
+        <div class="maroon-line-left w-12 mb-6"></div>
+        <p class="font-sans text-xs tracking-[0.15em] uppercase maroon-text mb-3">Mortgage Tools</p>
+        <h2 class="font-serif text-5xl font-light cream-text mb-6">Payment<br/><em class="italic">Calculator</em></h2>
+        <p class="font-sans leading-relaxed mb-8" style="color:rgba(244,240,232,0.6);">Estimates only — not a commitment to lend. Contact Shan for personalized advice tailored to your financial situation.</p>
+        <div class="accent-border p-5">
           <p class="font-sans text-xs tracking-wider text-muted uppercase mb-3">+ 4 more tools coming</p>
-          <div class="font-sans text-sm text-cream/50 space-y-2">
+          <div class="font-sans text-sm space-y-2" style="color:rgba(244,240,232,0.5);">
             <div>B-20 Stress Test Calculator</div>
             <div>Affordability Calculator</div>
             <div>Ontario Land Transfer Tax</div>
@@ -260,37 +259,37 @@
           </div>
         </div>
       </div>
-      <div class="bg-charcoal gold-border p-8">
+      <div class="bg-darkMid accent-border p-8">
         <div class="space-y-6 mb-8">
           <div>
             <div class="flex justify-between mb-3">
               <label class="font-sans text-xs tracking-[0.1em] uppercase text-muted">Purchase Price</label>
-              <span class="font-sans text-sm font-medium gold-text" id="principalDisplay">$850,000</span>
+              <span class="font-sans text-sm font-medium maroon-text" id="principalDisplay">$850,000</span>
             </div>
             <input type="range" id="principalSlider" min="100000" max="3000000" step="5000" value="850000" class="w-full" />
           </div>
           <div>
             <div class="flex justify-between mb-3">
               <label class="font-sans text-xs tracking-[0.1em] uppercase text-muted">Interest Rate</label>
-              <span class="font-sans text-sm font-medium gold-text" id="rateDisplay">5.25%</span>
+              <span class="font-sans text-sm font-medium maroon-text" id="rateDisplay">5.25%</span>
             </div>
             <input type="range" id="rateSlider" min="1" max="15" step="0.05" value="5.25" class="w-full" />
           </div>
           <div>
             <div class="flex justify-between mb-3">
               <label class="font-sans text-xs tracking-[0.1em] uppercase text-muted">Amortization</label>
-              <span class="font-sans text-sm font-medium gold-text" id="amortDisplay">25 years</span>
+              <span class="font-sans text-sm font-medium maroon-text" id="amortDisplay">25 years</span>
             </div>
             <input type="range" id="amortSlider" min="5" max="30" step="1" value="25" class="w-full" />
           </div>
         </div>
-        <div class="gold-line mb-6"></div>
+        <div class="maroon-line mb-6"></div>
         <div class="text-center mb-6">
           <div class="font-sans text-xs tracking-[0.12em] uppercase text-muted mb-2">Estimated Monthly Payment</div>
-          <div class="font-serif text-6xl font-light gold-text" id="calcResult">$4,686</div>
-          <div class="font-sans text-xs text-muted/60 mt-2">P&amp;I only · Tax, insurance &amp; CMHC not included</div>
+          <div class="font-serif text-6xl font-light maroon-text" id="calcResult">$4,686</div>
+          <div class="font-sans text-xs mt-2" style="color:rgba(136,153,187,0.6);">P&amp;I only · Tax, insurance &amp; CMHC not included</div>
         </div>
-        <a href="#contact" class="gold-btn block text-center py-4 font-sans text-xs tracking-[0.1em] uppercase font-medium transition-smooth">
+        <a href="#contact" class="maroon-btn block text-center py-4 font-sans text-xs tracking-[0.1em] uppercase font-medium transition-smooth">
           Book a Consultation
         </a>
       </div>
@@ -301,28 +300,28 @@
   <section id="about" class="section-dark py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <div class="gold-line w-24 mx-auto mb-6"></div>
-        <p class="font-sans text-xs tracking-[0.2em] uppercase gold-text mb-3">Why Work With Shan</p>
-        <h2 class="font-serif text-5xl font-light text-cream">The Standard<br/><em class="italic">of Excellence</em></h2>
+        <div class="maroon-line w-24 mx-auto mb-6"></div>
+        <p class="font-sans text-xs tracking-[0.2em] uppercase maroon-text mb-3">Why Work With Shan</p>
+        <h2 class="font-serif text-5xl font-light cream-text">The Standard<br/><em class="italic">of Excellence</em></h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-px bg-cream/10">
+      <div class="grid md:grid-cols-3 gap-px" style="background:rgba(244,240,232,0.08);">
         <div class="bg-dark p-10 text-center">
-          <div class="font-serif text-6xl font-light gold-text mb-4">I</div>
-          <div class="gold-line w-8 mx-auto mb-6"></div>
-          <h3 class="font-serif text-2xl font-light text-cream mb-4">Dual-Licensed<br/><em class="italic">Advantage</em></h3>
-          <p class="font-sans text-sm text-cream/50 leading-relaxed">Few professionals hold both a real estate broker licence and an FSRA Level-2 mortgage agent designation. One trusted advisor from listing to financing.</p>
+          <div class="font-serif text-6xl font-light maroon-text mb-4">I</div>
+          <div class="maroon-line w-8 mx-auto mb-6"></div>
+          <h3 class="font-serif text-2xl font-light cream-text mb-4">Dual-Licensed<br/><em class="italic">Advantage</em></h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(244,240,232,0.5);">Few professionals hold both a real estate broker licence and an FSRA Level-2 mortgage agent designation. One trusted advisor from listing to financing.</p>
         </div>
         <div class="bg-panel p-10 text-center">
-          <div class="font-serif text-6xl font-light gold-text mb-4">II</div>
-          <div class="gold-line w-8 mx-auto mb-6"></div>
-          <h3 class="font-serif text-2xl font-light text-cream mb-4">GTA Local<br/><em class="italic">Expert</em></h3>
-          <p class="font-sans text-sm text-cream/50 leading-relaxed">Scarborough, Pickering, Ajax, Oshawa, Toronto — 20+ years. Diamond Award recipient. 80% referral business. A proven track record in these markets.</p>
+          <div class="font-serif text-6xl font-light maroon-text mb-4">II</div>
+          <div class="maroon-line w-8 mx-auto mb-6"></div>
+          <h3 class="font-serif text-2xl font-light cream-text mb-4">GTA Local<br/><em class="italic">Expert</em></h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(244,240,232,0.5);">Scarborough, Pickering, Ajax, Oshawa, Toronto — 20+ years. Diamond Award recipient. 80% referral business. A proven track record in these markets.</p>
         </div>
         <div class="bg-dark p-10 text-center">
-          <div class="font-serif text-6xl font-light gold-text mb-4">III</div>
-          <div class="gold-line w-8 mx-auto mb-6"></div>
-          <h3 class="font-serif text-2xl font-light text-cream mb-4">Team Shan<br/><em class="italic">Support</em></h3>
-          <p class="font-sans text-sm text-cream/50 leading-relaxed">Jeyakumar Nadarasah, Anita Quaye, Thanu Thayaparan, and Viki Velauthan — five dedicated sales representatives with one shared standard of service.</p>
+          <div class="font-serif text-6xl font-light maroon-text mb-4">III</div>
+          <div class="maroon-line w-8 mx-auto mb-6"></div>
+          <h3 class="font-serif text-2xl font-light cream-text mb-4">Team Shan<br/><em class="italic">Support</em></h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(244,240,232,0.5);">Jeyakumar Nadarasah, Anita Quaye, Thanu Thayaparan, and Viki Velauthan — five dedicated sales representatives with one shared standard of service.</p>
         </div>
       </div>
     </div>
@@ -332,46 +331,46 @@
   <section id="resources" class="max-w-7xl mx-auto px-6 py-24">
     <div class="flex justify-between items-end mb-12">
       <div>
-        <div class="gold-line-left w-12 mb-4"></div>
-        <p class="font-sans text-xs tracking-[0.15em] uppercase gold-text mb-2">Resources</p>
-        <h2 class="font-serif text-5xl font-light text-cream">Insights &amp;<br/><em class="italic">Market Intelligence</em></h2>
+        <div class="maroon-line-left w-12 mb-4"></div>
+        <p class="font-sans text-xs tracking-[0.15em] uppercase maroon-text mb-2">Resources</p>
+        <h2 class="font-serif text-5xl font-light cream-text">Insights &amp;<br/><em class="italic">Market Intelligence</em></h2>
       </div>
-      <a href="/resources" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:gold-text transition-smooth">All Articles →</a>
+      <a href="/resources" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-maroon transition-smooth">All Articles →</a>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="gold-border bg-panel p-8 card-gold transition-smooth">
-        <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">Mortgage Tips</span>
-        <h3 class="font-serif text-2xl font-light text-cream mt-4 mb-4">The B-20 Stress Test Explained</h3>
-        <p class="font-sans text-sm text-cream/50 leading-relaxed mb-6">OSFI's qualifying rate rule affects how much you can borrow. Here's how it works and how to plan around it.</p>
-        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-gold transition-smooth">Read →</a>
+      <div class="accent-border bg-panel p-8 card-accent transition-smooth">
+        <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">Mortgage Tips</span>
+        <h3 class="font-serif text-2xl font-light cream-text mt-4 mb-4">The B-20 Stress Test Explained</h3>
+        <p class="font-sans text-sm leading-relaxed mb-6" style="color:rgba(244,240,232,0.5);">OSFI's qualifying rate rule affects how much you can borrow. Here's how it works and how to plan around it.</p>
+        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-maroon transition-smooth">Read →</a>
       </div>
-      <div class="gold-border bg-panel p-8 card-gold transition-smooth">
-        <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">Market Update</span>
-        <h3 class="font-serif text-2xl font-light text-cream mt-4 mb-4">Scarborough &amp; Pickering: Spring 2026 Snapshot</h3>
-        <p class="font-sans text-sm text-cream/50 leading-relaxed mb-6">Active listings, days on market, and price trends for the communities Shan serves. Updated monthly.</p>
-        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-gold transition-smooth">Read →</a>
+      <div class="accent-border bg-panel p-8 card-accent transition-smooth">
+        <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">Market Update</span>
+        <h3 class="font-serif text-2xl font-light cream-text mt-4 mb-4">Scarborough &amp; Pickering: Spring 2026 Snapshot</h3>
+        <p class="font-sans text-sm leading-relaxed mb-6" style="color:rgba(244,240,232,0.5);">Active listings, days on market, and price trends for the communities Shan serves. Updated monthly.</p>
+        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-maroon transition-smooth">Read →</a>
       </div>
-      <div class="gold-border bg-panel p-8 card-gold transition-smooth">
-        <span class="font-sans text-xs tracking-[0.1em] uppercase gold-text">Buyer Guide</span>
-        <h3 class="font-serif text-2xl font-light text-cream mt-4 mb-4">First-Time Buyer's Checklist</h3>
-        <p class="font-sans text-sm text-cream/50 leading-relaxed mb-6">A plain-language guide to the Ontario homebuying process, written for first-timers navigating a competitive market.</p>
-        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-gold transition-smooth">Read →</a>
+      <div class="accent-border bg-panel p-8 card-accent transition-smooth">
+        <span class="font-sans text-xs tracking-[0.1em] uppercase maroon-text">Buyer Guide</span>
+        <h3 class="font-serif text-2xl font-light cream-text mt-4 mb-4">First-Time Buyer's Checklist</h3>
+        <p class="font-sans text-sm leading-relaxed mb-6" style="color:rgba(244,240,232,0.5);">A plain-language guide to the Ontario homebuying process, written for first-timers navigating a competitive market.</p>
+        <a href="#" class="font-sans text-xs tracking-[0.1em] uppercase text-muted hover:text-maroon transition-smooth">Read →</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA BAND - Full bleed dark -->
+  <!-- CTA BAND -->
   <section id="contact" class="relative py-28 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=70" alt="" class="w-full h-full object-cover opacity-20" />
-      <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(13,13,13,0.97) 0%, rgba(28,28,28,0.9) 100%);"></div>
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=70" alt="" class="w-full h-full object-cover opacity-15" />
+      <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(10,31,79,0.97) 0%, rgba(7,22,64,0.92) 100%);"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-      <div class="gold-line w-16 mx-auto mb-8"></div>
-      <p class="font-sans text-xs tracking-[0.2em] uppercase gold-text mb-4">Ready to make a move?</p>
-      <h2 class="font-serif text-6xl md:text-7xl font-light text-cream mb-10">Let's talk.</h2>
+      <div class="maroon-line w-16 mx-auto mb-8"></div>
+      <p class="font-sans text-xs tracking-[0.2em] uppercase maroon-text mb-4">Ready to make a move?</p>
+      <h2 class="font-serif text-6xl md:text-7xl font-light cream-text mb-10">Let's talk.</h2>
       <div class="flex flex-col sm:flex-row gap-5 justify-center">
-        <a href="tel:4168264742" class="gold-btn px-10 py-5 font-sans text-xs tracking-[0.12em] uppercase font-medium transition-smooth">
+        <a href="tel:4168264742" class="maroon-btn px-10 py-5 font-sans text-xs tracking-[0.12em] uppercase font-medium transition-smooth">
           Book a 15-Minute Call
         </a>
         <a href="#mortgage" class="ghost-btn px-10 py-5 font-sans text-xs tracking-[0.12em] uppercase font-medium transition-smooth">
@@ -382,16 +381,16 @@
   </section>
 
   <!-- COMPLIANCE FOOTER -->
-  <footer class="section-panel border-t gold-border" style="border-left:none;border-right:none;">
+  <footer class="panel border-t accent-border" style="background:#071640;border-left:none;border-right:none;">
     <div class="max-w-7xl mx-auto px-6 py-12">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
-          <div class="font-serif text-xl font-light gold-text mb-4 tracking-widest">SHAN THAYAPARAN</div>
-          <p class="font-sans text-xs text-muted/60 leading-relaxed">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
+          <div class="font-serif text-xl font-light maroon-text mb-4 tracking-widest">SHAN THAYAPARAN</div>
+          <p class="font-sans text-xs leading-relaxed" style="color:rgba(136,153,187,0.6);">Dual-licensed realtor and mortgage agent serving the Greater Toronto Area for over 20 years.</p>
         </div>
         <div>
-          <div class="font-sans text-xs tracking-[0.15em] uppercase text-muted/50 mb-4">Legal Disclosures</div>
-          <div class="font-sans text-xs text-muted/50 space-y-1.5 leading-relaxed">
+          <div class="font-sans text-xs tracking-[0.15em] uppercase mb-4" style="color:rgba(136,153,187,0.5);">Legal Disclosures</div>
+          <div class="font-sans text-xs space-y-1.5 leading-relaxed" style="color:rgba(136,153,187,0.5);">
             <div>RE/MAX Community Realty · RECO #47117293</div>
             <div>Mortgage Agent: Mo8009140</div>
             <div>Brokerage Lic #15422265 · License #2154151</div>
@@ -399,18 +398,18 @@
           </div>
         </div>
         <div>
-          <div class="font-sans text-xs tracking-[0.15em] uppercase text-muted/50 mb-4">Legal</div>
-          <div class="font-sans text-xs text-muted/50 space-y-2">
+          <div class="font-sans text-xs tracking-[0.15em] uppercase mb-4" style="color:rgba(136,153,187,0.5);">Legal</div>
+          <div class="font-sans text-xs space-y-2" style="color:rgba(136,153,187,0.5);">
             <div><a href="#" class="hover:text-muted transition-smooth">Privacy Policy</a></div>
             <div><a href="#" class="hover:text-muted transition-smooth">Terms of Use</a></div>
             <div><a href="#" class="hover:text-muted transition-smooth">Accessibility</a></div>
           </div>
         </div>
       </div>
-      <div class="gold-line mb-6"></div>
+      <div class="maroon-line mb-6"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="font-sans text-xs text-muted/40">© 2026 Shan Thayaparan. All rights reserved.</div>
-        <div class="font-sans text-xs text-muted/40">Website by <a href="https://winwinmarketing.ca" class="hover:text-muted/70">WinWin Marketing</a></div>
+        <div class="font-sans text-xs" style="color:rgba(136,153,187,0.4);">© 2026 Shan Thayaparan. All rights reserved.</div>
+        <div class="font-sans text-xs" style="color:rgba(136,153,187,0.4);">Website by <a href="https://winwinmarketing.ca" class="hover:text-muted/70">WinWin Marketing</a></div>
       </div>
     </div>
   </footer>

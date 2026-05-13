@@ -6,14 +6,44 @@
   <title>Website Design Options — Shan Thayaparan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; background: #F8FAFC; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #F8FAFC; }
     .preview-img { aspect-ratio: 16/10; object-fit: cover; background: #E2E8F0; }
     .card-hover { transition: all 0.25s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
     .direction-badge { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+    .group-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 32px;
+    }
+    .group-divider::before,
+    .group-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #CBD5E1, transparent);
+    }
+    .group-divider-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0D3DA5;
+      background: linear-gradient(135deg, #EEF2FF 0%, #FDF2F2 100%);
+      border: 1px solid #C7D2FE;
+      padding: 6px 20px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .cutting-edge-badge {
+      background: linear-gradient(135deg, #0D3DA5 0%, #7C0000 100%);
+      color: white;
+    }
   </style>
 </head>
 <body class="text-slate-800">
@@ -24,12 +54,12 @@
       <div class="inline-flex items-center gap-2 bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
         Prepared by WinWin Marketing · May 2026
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style="font-family:'Inter',sans-serif;">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style="font-family:'Outfit',sans-serif;">
         Website Design Options
       </h1>
       <p class="text-xl font-semibold text-slate-500 mb-2">Shan Thayaparan — Realtor &amp; Mortgage Agent</p>
       <p class="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
-        Pick the direction that feels right and we'll build out the full site from your choice. Each option uses your real bio, disclosures, and 3 sample listings so you can feel the personality. <strong>The mortgage calculator works in every one.</strong>
+        Each direction uses Shan's brand colors (<strong style="color:#0D3DA5;">#0D3DA5</strong> deep navy + <strong style="color:#7C0000;">#7C0000</strong> burgundy). Five are reskins of the original directions; four are new high-end / cutting-edge takes. Pick the direction that feels right and we'll build out the full site from your choice. <strong>The mortgage calculator works in every one.</strong>
       </p>
     </div>
   </header>
@@ -37,7 +67,7 @@
   <!-- INSTRUCTIONS BOX -->
   <div class="max-w-5xl mx-auto px-6 py-6">
     <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 flex gap-4 items-start">
-      <div class="text-blue-500 text-2xl mt-0.5">ℹ</div>
+      <div class="text-blue-500 text-2xl mt-0.5">&#9432;</div>
       <div>
         <div class="font-semibold text-blue-800 mb-1">How to use this page</div>
         <div class="text-sm text-blue-700 leading-relaxed">Click "View this design" on any card below to open the full mockup page. The mortgage calculator is interactive — try changing the purchase price and see your monthly payment update live. Once you pick a direction, let Jaiden know and we'll build the complete site in that style.</div>
@@ -47,15 +77,17 @@
 
   <!-- DESIGN CARDS -->
   <main class="max-w-5xl mx-auto px-6 py-8">
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
+
+    <!-- Reskinned originals -->
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-2">
 
       <!-- Direction 1: Editorial -->
       <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
         <div class="preview-img bg-gradient-to-br from-amber-50 to-stone-100 flex items-center justify-center">
           <img src="01-editorial/preview.png" alt="Editorial direction preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
-            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1A1A1A;">Editorial</div>
-            <div style="font-size:0.75rem;color:#6B6B6B;font-family:'Inter',sans-serif;">Black on cream · Serif typography</div>
+            <div style="font-family:'Georgia',serif;font-size:1.5rem;font-weight:700;color:#1A1A1A;">Editorial</div>
+            <div style="font-size:0.75rem;color:#0D3DA5;font-family:'DM Sans',sans-serif;">Navy #0D3DA5 · Burgundy #7C0000 · Cream bg</div>
           </div>
         </div>
         <div class="p-6">
@@ -64,8 +96,8 @@
             <span class="direction-badge bg-amber-100 text-amber-700 px-2 py-1 rounded-full">Editorial</span>
           </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2">Editorial / Typography-Led</h2>
-          <p class="text-sm text-slate-500 leading-relaxed mb-5">Big serif headlines, generous whitespace, calm black-on-cream palette. NYT Real Estate vibe — serious, credible, timeless. Best for clients who trust substance over flash.</p>
-          <a href="01-editorial/index.html" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl font-semibold text-sm hover:bg-slate-700 transition-colors">
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Big serif headlines, generous whitespace, calm navy-on-cream palette. NYT Real Estate vibe — serious, credible, timeless. Best for clients who trust substance over flash.</p>
+          <a href="01-editorial/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0D3DA5;">
             View this design →
           </a>
         </div>
@@ -76,8 +108,8 @@
         <div class="preview-img bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
           <img src="02-saas/preview.png" alt="SaaS direction preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
-            <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;color:#2563EB;">SaaS / Software</div>
-            <div style="font-size:0.75rem;color:#64748B;">Inter · Gradient accents · Animated counters</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:800;color:#1E4FBC;">SaaS / Software</div>
+            <div style="font-size:0.75rem;color:#64748B;">DM Sans · Gradient accents · Animated counters</div>
           </div>
         </div>
         <div class="p-6">
@@ -86,8 +118,8 @@
             <span class="direction-badge bg-blue-100 text-blue-700 px-2 py-1 rounded-full">SaaS</span>
           </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2">SaaS / Software</h2>
-          <p class="text-sm text-slate-500 leading-relaxed mb-5">Clean Inter font, subtle gradient accents, animated number counters, micro-interactions on buttons. Stripe / Linear vibe — modern, trustworthy, tech-forward. Great for attracting younger buyers.</p>
-          <a href="02-saas/index.html" class="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors">
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">DM Sans font, subtle gradient accents in brand blue and burgundy, animated number counters, micro-interactions on buttons. Stripe / Linear vibe — modern, trustworthy, tech-forward. Great for attracting younger buyers.</p>
+          <a href="02-saas/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#1E4FBC;">
             View this design →
           </a>
         </div>
@@ -95,21 +127,21 @@
 
       <!-- Direction 3: Warm Professional -->
       <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
-        <div class="preview-img bg-gradient-to-br from-stone-50 to-green-50 flex items-center justify-center">
+        <div class="preview-img bg-gradient-to-br from-stone-50 to-blue-50 flex items-center justify-center">
           <img src="03-warm-professional/preview.png" alt="Warm Professional direction preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
-            <div style="font-family:'Georgia',serif;font-size:1.5rem;font-weight:600;color:#2C2416;">Warm &amp; Welcoming</div>
-            <div style="font-size:0.75rem;color:#7A6E60;">Cream · Sage green · Terracotta · Organic shapes</div>
+            <div style="font-family:'Georgia',serif;font-size:1.5rem;font-weight:600;color:#0D3DA5;">Warm &amp; Welcoming</div>
+            <div style="font-size:0.75rem;color:#7A6E60;">Navy · Burgundy · Warm cream · Organic shapes</div>
           </div>
         </div>
         <div class="p-6">
           <div class="flex items-center gap-2 mb-3">
             <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 3</span>
-            <span class="direction-badge bg-green-100 text-green-700 px-2 py-1 rounded-full">Warm Pro</span>
+            <span class="direction-badge bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Warm Pro</span>
           </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2">Warm Professional</h2>
-          <p class="text-sm text-slate-500 leading-relaxed mb-5">Soft neutrals — cream, sage green, terracotta. Organic blob shapes, rounded corners everywhere, photography-forward. Modern boutique brokerage. Welcoming to all families.</p>
-          <a href="03-warm-professional/index.html" class="block w-full text-center bg-green-700 text-white py-3 rounded-xl font-semibold text-sm hover:bg-green-800 transition-colors">
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Soft neutrals — cream and sage green accented with brand navy and burgundy. Organic blob shapes, rounded corners everywhere, photography-forward. Modern boutique brokerage. Welcoming to all families.</p>
+          <a href="03-warm-professional/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0D3DA5;">
             View this design →
           </a>
         </div>
@@ -117,21 +149,21 @@
 
       <!-- Direction 4: Luxury Realtor -->
       <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
-        <div class="preview-img bg-gradient-to-br from-stone-800 to-stone-900 flex items-center justify-center">
+        <div class="preview-img bg-gradient-to-br from-slate-900 to-blue-950 flex items-center justify-center">
           <img src="04-luxury-realtor/preview.png" alt="Luxury Realtor direction preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
-            <div style="font-family:'Georgia',serif;font-size:1.5rem;font-weight:300;color:#C9A961;letter-spacing:0.1em;">LUXURY</div>
-            <div style="font-size:0.75rem;color:#888;font-family:'Inter',sans-serif;">Dark · Gold #C9A961 · Cormorant serif</div>
+            <div style="font-family:'Georgia',serif;font-size:1.5rem;font-weight:300;color:#fff;letter-spacing:0.1em;">LUXURY</div>
+            <div style="font-size:0.75rem;color:#aaa;font-family:'DM Sans',sans-serif;">Dark navy · Burgundy accent · Cormorant serif</div>
           </div>
         </div>
         <div class="p-6">
           <div class="flex items-center gap-2 mb-3">
             <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 4</span>
-            <span class="direction-badge px-2 py-1 rounded-full" style="background:#1C1C1C;color:#C9A961;">Luxury</span>
+            <span class="direction-badge px-2 py-1 rounded-full" style="background:#0A1F4F;color:#fff;">Luxury</span>
           </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2">Luxury Realtor</h2>
-          <p class="text-sm text-slate-500 leading-relaxed mb-5">Full-bleed hero image, dark backgrounds, gold (#C9A961) accents, Cormorant Garamond serif. Compass / Sotheby's vibe — premium positioning for GTA's move-up and luxury buyers.</p>
-          <a href="04-luxury-realtor/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#1C1C1C;">
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Full-bleed hero image, dark navy backgrounds (#0A1F4F), burgundy (#7C0000) accents, Cormorant Garamond serif. Compass / Sotheby's vibe — premium positioning for GTA's move-up and luxury buyers.</p>
+          <a href="04-luxury-realtor/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0A1F4F;">
             View this design →
           </a>
         </div>
@@ -139,35 +171,133 @@
 
       <!-- Direction 5: Marketing Bold -->
       <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
-        <div class="preview-img bg-gradient-to-br from-violet-600 to-pink-500 flex items-center justify-center">
+        <div class="preview-img flex items-center justify-center" style="background:linear-gradient(135deg,#1E50D6 0%,#C81E1E 100%);">
           <img src="05-marketing-bold/preview.png" alt="Marketing Bold direction preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
-            <div style="font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;color:white;">BOLD</div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">Purple → Pink gradient · Shimmer animation</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:900;color:white;">BOLD</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.8);">Navy #1E50D6 → Crimson #C81E1E · Spinning hero</div>
           </div>
         </div>
         <div class="p-6">
           <div class="flex items-center gap-2 mb-3">
             <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 5</span>
-            <span class="direction-badge text-white px-2 py-1 rounded-full" style="background:linear-gradient(135deg,#7C3AED,#EC4899);">Bold</span>
+            <span class="direction-badge text-white px-2 py-1 rounded-full" style="background:linear-gradient(135deg,#1E50D6,#C81E1E);">Bold</span>
           </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2">Marketing-Bold</h2>
-          <p class="text-sm text-slate-500 leading-relaxed mb-5">Punchy CTAs, purple-to-pink gradient backgrounds, animated shimmer/beam hero effect, strong colour blocks. Modern marketing landing page — high energy, high conversion, Gen X/Millennial appeal.</p>
-          <a href="05-marketing-bold/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:linear-gradient(135deg,#7C3AED,#EC4899);">
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Punchy CTAs, brand-blue-to-crimson gradient backgrounds, animated conic-gradient beam hero effect, strong colour blocks. High energy, high conversion — Gen X/Millennial appeal with Syne display font.</p>
+          <a href="05-marketing-bold/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:linear-gradient(135deg,#1E50D6,#C81E1E);">
             View this design →
           </a>
         </div>
       </div>
 
-      <!-- Blank placeholder - "Tell us what you think" -->
-      <div class="bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200 overflow-hidden flex items-center justify-center p-8 text-center">
-        <div>
-          <div class="text-4xl mb-3">💬</div>
-          <div class="font-bold text-slate-700 mb-2">Have a direction in mind?</div>
-          <p class="text-sm text-slate-400 leading-relaxed">Like elements from two directions? Want something else entirely? Let Jaiden know — these are starting points, not final designs.</p>
-          <a href="mailto:winwinmarketingcanada@gmail.com" class="inline-block mt-4 bg-slate-800 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-700 transition-colors">Contact Jaiden</a>
+    </div>
+
+    <!-- GROUP DIVIDER -->
+    <div class="group-divider">
+      <span class="group-divider-label">Cutting-edge directions &#8595;</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
+
+      <!-- Direction 6: WebGL / 3D Hero -->
+      <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
+        <div class="preview-img flex items-center justify-center" style="background:linear-gradient(135deg,#0A1F4F 0%,#1E50D6 60%,#7C0000 100%);">
+          <img src="06-webgl-3d/preview.png" alt="WebGL 3D Hero preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
+            <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:white;">WebGL / 3D</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">Three.js Toronto skyline · Mouse parallax</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 6</span>
+            <span class="direction-badge cutting-edge-badge px-2 py-1 rounded-full">WebGL</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">WebGL / 3D Hero</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Three.js low-poly Toronto skyline rendered in brand colors. Real-time mouse parallax moves the city. GSAP scroll animations. Graceful fallback to static gradient for older browsers. The most technically ambitious direction.</p>
+          <a href="06-webgl-3d/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:linear-gradient(135deg,#0A1F4F,#1E50D6);">
+            View this design →
+          </a>
         </div>
       </div>
+
+      <!-- Direction 7: Scroll Storytelling -->
+      <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
+        <div class="preview-img flex items-center justify-center" style="background:linear-gradient(160deg,#0D3DA5 0%,#1a5fd4 50%,#0a2d7a 100%);">
+          <img src="07-scroll-storytelling/preview.png" alt="Scroll Storytelling preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
+            <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:white;">Scroll Story</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">Snap sections · Animated GTA map</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 7</span>
+            <span class="direction-badge cutting-edge-badge px-2 py-1 rounded-full">Scroll</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Scroll Storytelling</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">CSS scroll-snap sections that lock the page into place as you scroll through the story. Animated SVG GTA map lights up city by city. IntersectionObserver drives all reveal animations. Clean light theme with brand navy.</p>
+          <a href="07-scroll-storytelling/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0D3DA5;">
+            View this design →
+          </a>
+        </div>
+      </div>
+
+      <!-- Direction 8: Glassmorphism -->
+      <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
+        <div class="preview-img flex items-center justify-center" style="background:#0D1035;">
+          <img src="08-glassmorphism/preview.png" alt="Glassmorphism preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center" style="background:linear-gradient(135deg,rgba(20,80,199,0.3),rgba(154,24,24,0.3));">
+            <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:white;">Glass</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">Mesh gradient · Backdrop blur cards</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 8</span>
+            <span class="direction-badge cutting-edge-badge px-2 py-1 rounded-full">Glass</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Glassmorphism</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">Animated mesh gradient background — four color blobs pulsing in brand blue and burgundy. All cards use CSS backdrop-filter blur for the frosted-glass effect. Dark, atmospheric, cinematic. Visually bold without being loud.</p>
+          <a href="08-glassmorphism/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0D1035;">
+            View this design →
+          </a>
+        </div>
+      </div>
+
+      <!-- Direction 9: Bento Grid Magazine -->
+      <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden card-hover shadow-sm">
+        <div class="preview-img flex items-center justify-center" style="background:#F7F6F2;">
+          <img src="09-bento-magazine/preview.png" alt="Bento Grid Magazine preview" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="hidden w-full h-full items-center justify-center flex-col gap-2 p-6 text-center">
+            <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:#0D3DA5;">Bento Grid</div>
+            <div style="font-size:0.75rem;color:#7C0000;">CSS Grid magazine layout · Custom cursor</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="direction-badge bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Direction 9</span>
+            <span class="direction-badge cutting-edge-badge px-2 py-1 rounded-full">Bento</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Bento Grid Magazine</h2>
+          <p class="text-sm text-slate-500 leading-relaxed mb-5">CSS Grid bento layout in a warm editorial grid. Custom dot cursor follows your mouse. View Transitions API for smooth anchor scrolls. Lottie animation integrated. Light, airy, modern — the Apple product page of mortgage sites.</p>
+          <a href="09-bento-magazine/index.html" class="block w-full text-center text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background:#0D3DA5;">
+            View this design →
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact / Feedback card -->
+      <div class="bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200 overflow-hidden flex items-center justify-center p-8 text-center md:col-span-2 xl:col-span-2">
+        <div>
+          <div class="text-4xl mb-3">&#128172;</div>
+          <div class="font-bold text-slate-700 mb-2">Have a direction in mind?</div>
+          <p class="text-sm text-slate-400 leading-relaxed">Like elements from two directions? Want something else entirely? Let Jaiden know — these are starting points, not final designs.</p>
+          <a href="mailto:winwinmarketingcanada@gmail.com" class="inline-block mt-4 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity" style="background:#0D3DA5;">Contact Jaiden</a>
+        </div>
+      </div>
+
     </div>
 
     <!-- What's REAL in these mockups -->
